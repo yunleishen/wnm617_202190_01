@@ -36,12 +36,14 @@ body{
 	font-family: var(--font-sans);
 }
 
-header #logo{
+
+
+header .logo{
 	color: var(--color-main-light);
-	font-size: 2em;
+	font-size: 1.5em;
 	font-weight: bold;
 }
-	#logo: hover{
+	.logo:hover{
 	cursor: pointer;
 
 	}
@@ -119,14 +121,15 @@ a:hover{
 	color: var(--color-main-dark);
 }
 	.intro-p1{
-		font-size: 1.8em;
+		font-size: 1.5em;
 		line-height: 1em;
 	}
 	.intro-p2{
-		font-size: 1.2em;
+		font-size: 1em;
 	}
 
 .nav ul{
+	color: var(--color-main-dark);
 	list-style-type: none;
 	margin-top: 0;
 	margin-bottom: 0;
@@ -212,15 +215,9 @@ a:hover{
 
 
 .navbar{
-	color: var(--color-main-dark);
 	line-height: var(--header-height);
 }
 
-	.navbar h1{
-		font-size: 1em;
-		margin: 0;
-		font-family: var(--font-sans);
-	}
 
 	.navbar a{
 		padding: 0 0.5em;
