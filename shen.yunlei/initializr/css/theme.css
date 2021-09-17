@@ -1,0 +1,154 @@
+:root{
+	--color-green-light: #D7D8C9;
+	--color-green-medium: #A4A68A;
+	--color-green: #57523E;
+
+	--color-orange-medium: #F2BE24;
+	--color-orange: #D94C1A;
+
+	--color-white: white;
+	--color-black: black;
+  --header-height: 4rem;
+	--spacing: 1rem;
+
+
+	--font-serif: Georgia,Times New Roman, serif;
+	--font-sans: Optima, Helvetica,sans-serif;
+}
+
+
+body{
+	color: var(--color-green-light);
+	background-color: var(--color-green-light);
+	display: flex;
+	flex-wrap: wrap;
+	height: 100vh;
+
+	font-family: var(--font-serif);
+
+	background-image: url(../img/bg.png);
+
+}
+
+
+.header-container{
+	height: 100%;
+	text-align: center;
+	padding-top: 2%;
+	padding-left: 2%;
+	padding-right: 2%;
+
+    background-color: var(--color-green-light);
+    box-shadow: 2px 0px 12px #a4a68a;
+
+}
+
+.main-container{
+	width: 70%;
+    padding-top: 5%;
+	padding-left: 5%;
+	padding-right: 5%;
+}
+
+.footer-container{
+	display: block;
+	width: 100%;
+	text-align: center;
+	padding-bottom: 2%;
+
+    background-color: var(--color-green-light);
+    box-shadow: 2px 0px 12px #a4a68a;
+    color: var(--color-green);
+}
+
+.main-container .main{
+	display: flex;
+	flex-direction: row-reverse;
+}
+
+.main-container article{
+	margin-left: 5%;
+}
+
+.main-container aside{
+	margin: auto;
+	text-align: center;
+	padding: 2%;
+	border-radius: 1.2em;
+	box-shadow: 0 5px 10px var(--color-green);
+
+	background-color: var(--color-orange);
+	color: var(--color-green-light);
+}
+	.main-container aside p{
+		margin: auto;
+		width: 50%;
+		text-align: left;
+	}
+
+
+.title{
+	flex: none;
+
+	color: var(--color-orange);
+}
+
+h1, h2, h3{
+	font-family: var(--font-sans);
+
+}
+
+nav{
+	flex: none;
+	font-variant-caps: all-small-caps;
+	font-weight: bold;
+}
+
+nav ul{
+	list-style: none;
+	padding-left: 0;
+}
+
+nav ul li{
+	width: 80px;
+	height: 20px;
+	margin: auto;
+	margin-top: 10%;
+	padding: 10%;
+	border-radius: 100px;
+
+
+	background-color: var(--color-orange);
+}
+
+nav ul li:hover{
+	transform: scale(1.1);
+	transition: all 0.3s;
+	background-color: var(--color-orange-medium);
+}
+
+nav ul li a{
+	text-decoration: none;
+	height: 100%;
+	width: 100%;
+
+	color: var(--color-green-light);
+}
+
+nav ul li a:hover{
+	color: var(--color-green);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
