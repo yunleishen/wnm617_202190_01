@@ -131,6 +131,7 @@ nav ul li a{
 	text-decoration: none;
 	height: 100%;
 	width: 100%;
+	white-space: nowrap;
 
 	color: var(--color-green-light);
 }
