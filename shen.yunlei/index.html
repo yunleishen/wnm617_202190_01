@@ -18,6 +18,8 @@
 	<script src="lib/js/jquery-2.2.4.min.js"></script>
 
 	<script src="js/app.js"></script>
+	<script src="js/signin.js"></script>
+
 
 	<script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
 </head>
@@ -39,9 +41,41 @@
 					<label>Password</label>
 					<input class="form-input" type="password" id="signin-password" data-role="none" placeholder="Password">
 				</div>
+
+	            <div class="form-control">
+	               <input type="submit" value="Sign In" class="form-button">
+	            </div>
+	            <div class="form-control centered">
+	               <p>Already have an account? </p>
+	               <a href="#page-signin">Sign Up</a>
+	            </div>
+			</form>
+		</div>
+	</section>
+
+	<section data-role="page" id="page-signup">
+		<div data-role="main" class="display-flex flex-vertical">
+			<div class="flex-stretch"></div>
+
+			<div class="flex-none"><img src="lib/img/logo-vertical.png" alt="" id="logo-vertical"></div>
+
+			<form data-ajax="false" class="form" id="signup-form" style="padding:10px">
 				<div class="form-control">
-					<a href="#page-home" class="form-button">Sign In</a>
+					<label>Email</label>
+					<input class="form-input" type="text" id="signup-email" data-role="none" placeholder="Email">
 				</div>
+				<div class="form-control">
+					<label>New Password</label>
+					<input class="form-input" type="password" id="signup-password1" data-role="none" placeholder="New Password">
+				</div>
+				<div class="form-control">
+					<label>Comfirm Password</label>
+					<input class="form-input" type="password" id="signup-password2" data-role="none" placeholder="Comfirm Password">
+				</div>
+				<div class="form-control">
+					<input type="submit">
+				</div>
+					
 			</form>
 		</div>
 	</section>
@@ -67,16 +101,29 @@
 	<!-- This is  map page -->
 	<section data-role="page" id="page-map">
 		<header data-role="header"><h1>Map</h1></header>
-		<div data-role="main">	
-			<div class="map"><img src="lib/img/map.jpeg" alt=""></div>
+		<div data-role="main">
+         <div class="map"></div>
 
-			<div>
-				<p>Chewie</p>
-				<p>Jasmine</p>
-				<p>Chester</p>
+         <div class="floater bottom right">
+            <a href="#" class="btn-circle ui-link" data-activate="#recent-add-modal">+</a>
+         </div>
 
-			</div>
-		</div>
+
+         <div class="modal" id="recent-add-modal">
+            <div class="modal-back" data-deactivate="#recent-add-modal"></div>
+            <div class="modal-drawer left">
+               <div class="modal-head display-flex">
+                  <div class="flex-stretch">Drawer</div>
+                  <div class="flex-none">
+                     <img src="lib/img/close.svg" alt="" class="icon" data-deactivate="#recent-add-modal">
+                  </div>
+               </div>
+               <div class="modal-body">
+                  Body
+               </div>
+            </div>
+         </div>
+      </div>
 		<footer data-role="footer">
 			<ul>
 				<li><a href="#page-home">Home</a></li>
@@ -85,19 +132,42 @@
 				<li><a href="#page-user">User</a></li>	
 			</ul>
 		</footer>
+
 	</section>
 
 	<!-- This is pets page -->
 	<section data-role="page" id="page-pets">
 		<header data-role="header"><h1>Pets</h1></header>
-		<div data-role="main">	
+		<div data-role="main"> 
+			<div class="overscroll floater fill-parent">
 			
 			<ul>
 				<li><a href="#page-chewie-profile"><h3>Chewie</h3></a></li>
 				<li><a href="#page-jasmine-profile"><h3>Jasmine</h3></a></li>
 				<li><a href="#page-chester-profile"><h3>Chester</h3></a></li>
+				<li><a href="#page-chewie-profile"><h3>Chewie</h3></a></li>
+				<li><a href="#page-jasmine-profile"><h3>Jasmine</h3></a></li>
+				<li><a href="#page-chester-profile"><h3>Chester</h3></a></li>
+				<li><a href="#page-chewie-profile"><h3>Chewie</h3></a></li>
+				<li><a href="#page-jasmine-profile"><h3>Jasmine</h3></a></li>
+				<li><a href="#page-chester-profile"><h3>Chester</h3></a></li>
+				<li><a href="#page-chewie-profile"><h3>Chewie</h3></a></li>
+				<li><a href="#page-jasmine-profile"><h3>Jasmine</h3></a></li>
+				<li><a href="#page-chester-profile"><h3>Chester</h3></a></li>
+				<li><a href="#page-chewie-profile"><h3>Chewie</h3></a></li>
+				<li><a href="#page-jasmine-profile"><h3>Jasmine</h3></a></li>
+				<li><a href="#page-chester-profile"><h3>Chester</h3></a></li>
+				<li><a href="#page-chewie-profile"><h3>Chewie</h3></a></li>
+				<li><a href="#page-jasmine-profile"><h3>Jasmine</h3></a></li>
+				<li><a href="#page-chester-profile"><h3>Chester</h3></a></li>
+				<li><a href="#page-chewie-profile"><h3>Chewie</h3></a></li>
+				<li><a href="#page-jasmine-profile"><h3>Jasmine</h3></a></li>
+				<li><a href="#page-chester-profile"><h3>Chester</h3></a></li>
 			</ul>
-
+			</div>
+			<div class="floater buttom right">
+				<a href="#" class="btn-circle" data-activate = "#list-add-modal">&plus;</a>
+			</div>
 		</div>
 		<footer data-role="footer">
 			<ul>
@@ -107,6 +177,29 @@
 				<li><a href="#page-user">User</a></li>		
 			</ul>
 		</footer>
+		<div class="modal" id="list-add-modal">
+	         <div class="modal-back" data-deactivate="#list-add-modal"></div>
+	         <form class="modal-popup form" id="list-add-form" data-ajax="false">
+	            <div class="modal-head">Add Pet</div>
+	            <div class="modal-body">
+	            	<div class="form-control">
+		                  <label for="list-add-name" class="form-label">Name</label>
+		                  <input type="text" id="list-add-name" class="form-input" data-role="none" placeholder="Name">
+	            	<div class="form-control">
+		                  <label for="list-add-type" class="form-label">Type</label>
+		                  <input type="text" id="list-add-type" class="form-input" data-role="none" placeholder="Type">
+	               </div>
+	            	<div class="form-control">
+		                  <label for="list-add-breed" class="form-label">Breed</label>
+		                  <input type="text" id="list-add-breed" class="form-input" data-role="none" placeholder="Breed">
+	               </div>
+	               </div>
+	           </div>
+	            <div class="modal-foot">
+	            	<button type="submit" class="form-button">Save</button>
+	            </div>
+	         </form>
+      </div>
 	</section>
 
 	<!-- This is animal profile page -->
@@ -155,7 +248,10 @@
 	<!-- This is userpage -->
 	<section data-role="page" id="page-user">
 		<header data-role="header"><h1>User</h1></header>
-		<div data-role="main">	
+		<div data-role="main">
+         <div>
+            <button class="form-button js-logout">Log Out</button>
+         </div>
 
 		</div>
 		<footer data-role="footer">
