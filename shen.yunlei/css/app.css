@@ -68,15 +68,9 @@ a{
 .flex-vertical{flex-direction: column;}
 
 
-.overscroll{
-	overflow: auto;
-}
-.overscroll-x{
-	overflow: auto;
-}
-.overscroll-y{
-	overflow: auto;
-}
+.overscroll{overflow: auto;}
+.overscroll-x{overflow: auto;}
+.overscroll-y{overflow: auto;}
 
 .fill-parent {
    width: 100%;
@@ -99,14 +93,17 @@ a{
 	display: flex;
 	flex-direction: column;
 	height: 100%;
+	width: 100%;
 	position: fixed;
 	top: 0;
 	left: 0;
+	overflow: hidden;
 }
 
 [data-role="main"]{
 	flex: 1 1 100%;
 	position: relative;
+	overflow: hidden;
 }
 
 
@@ -246,16 +243,19 @@ a{
 /* Circle Buttom */
 .btn-circle{
 	display: inline-block;
-	background-color: var(--color-neutral-light);
+	background-color: var(--color-neutral-dark);
+	color: var(--color-main-light);
 	width: 3rem;
 	height: 3rem;
 	line-height: 3rem;
 	text-align: center;
-  font-size: 1.5rem;
+  font-size: 2.4rem;
   border-radius: 2em;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.15);
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
 
 }
+
+
 
 /* MODAL */
 .modal {
@@ -290,7 +290,7 @@ a{
     top: 50%;
     left: 50%;
     transform: translate(-50%,calc(-50% + 3em));
-    border-radius: 5px;
+    border-radius: 10px;
     width: 80vmin;
     overflow: hidden;
     transition: all 0.3s;
@@ -299,12 +299,18 @@ a{
     padding: 10px;
     background-color: var(--color-neutral-light);
 }
-.modal-head,
+.modal-head{
+    background-color: var(--color-neutral-light);
+    line-height: 4rem;
+    padding: 0 1em;
+}
+
 .modal-foot {
     background-color: var(--color-neutral-light);
     line-height: 2rem;
-    padding: 0 1em;
+    padding: 0 2em;
 }
+
 .modal.active .modal-popup {
    transform: translate(-50%,-50%);
 }
@@ -344,9 +350,15 @@ a{
    flex: 1 1 100%;
 }
 
+.icon{
+	width: 1em;
+	height: 1em;
+	display: inline-block;
+}
 
-
-
+.btn-logout{
+	background-color: var(--color-neutral-light);
+}
 
 
 
