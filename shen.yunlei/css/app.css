@@ -67,6 +67,8 @@ a{
 .flex-justify-center{justify-content: center;}
 .flex-vertical{flex-direction: column;}
 
+.position-relative { position:relative; }
+.position-absolute { position:absolute; }
 
 .overscroll{overflow: auto;}
 .overscroll-x{overflow: auto;}
@@ -82,12 +84,31 @@ a{
 .centered{text-align: center;}
 .small{font-size: 0.8em;}
 
+.padding-sm { padding:0.5em;}
+.padding-md { padding:1em; }
+.padding-lg { padding:2em; }
 
-/*PAGE ELEMENTS*/
+/* SIGN IN/UP LOGOUT */
+.btn-logout{
+	background-color: var(--color-neutral-light);
+}
+
+.text-signup{
+	display: inline-block;
+}
+.btn-signup{
+	text-decoration: underline;
+	font-weight: 700;
+}
 
 #page-signin{
 	background-color: var(--color-main-light);
 }
+
+
+/*PAGE ELEMENTS*/
+
+
 
 .ui-mobile .ui-page-active{
 	display: flex;
@@ -176,6 +197,7 @@ a{
 	list-style-type: none;
 	text-decoration: none;
 }
+
 
 
 /* FORM ELEMENTS */
@@ -356,15 +378,65 @@ a{
 	display: inline-block;
 }
 
-.btn-logout{
-	background-color: var(--color-neutral-light);
+.nav-icon {
+   display: block;
+   line-height: 2rem;
+   font-size: 1.5rem;
+}
+.nav-icon .icon {
+   vertical-align: middle;
+}
+.nav-icon-label {
+   display: block;
+   line-height: 1rem;
+   font-size: 0.7rem;
+}
+
+#footer-template{
+	position: relative;
+}
+
+.nav-icon-set{
+	position: absolute;
+	margin: 0;
+	top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.nav-icon-set li.active {
+   background-color: var(--color-main-light);
 }
 
 
 
-
-
-
-
+.animallist {
+   list-style-type: none;
+   margin: 0;
+   padding: 1em;
+}
+.animallist-item~.animallist-item {
+   margin-top: 1em;
+}
+.animallist-item a {
+    box-shadow: 0 5px 10px rgb(0 0 0 / 15%);
+    border-radius: 1em;
+    overflow: hidden;
+    font-weight: normal;
+}
+.animallist-item-image img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    vertical-align: middle;
+}
+.animallist-item-description {
+}
+.animallist-item-name {
+   font-size: 1.5em;
+}
+.animallist-item-type,
+.animallist-item-breed {
+   font-size: 0.9em;
+}
 
 
