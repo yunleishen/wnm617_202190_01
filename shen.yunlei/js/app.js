@@ -1,4 +1,5 @@
 
+
 // DOCUMENT READY
 $(()=>{
 
@@ -52,11 +53,13 @@ $(()=>{
       $(this).html($(target).html());
    })
 
-   $({
+  $({
       "#page-home":".nav-icon-set li:nth-child(1)",
       "#page-pets":".nav-icon-set li:nth-child(2)",
       "#page-user":".nav-icon-set li:nth-child(3)",
    }[location.hash]).addClass("active");
-
-
 });
+
+
+
+
