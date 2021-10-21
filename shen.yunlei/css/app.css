@@ -25,6 +25,9 @@ body{
 	background-color: var(--color-main-light);
 }
 
+.welcome{
+	text-align: center;
+}
 
 h2{
 	font-family: var(--font-cur);
