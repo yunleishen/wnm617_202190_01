@@ -97,7 +97,8 @@ a{
 	font-weight: 700;
 }
 
-#page-signin{
+#page-signin,
+#page-signup{
 	background-color: var(--color-main-medium);
 }
 
