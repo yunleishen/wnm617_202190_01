@@ -388,6 +388,11 @@ a{
    flex: 1 1 100%;
 }
 
+
+
+
+
+
 .icon{
 	fill: var(--color-main-dark);
 	width: 1em;
@@ -406,9 +411,9 @@ a{
 }
 
 .nav-icon-set li.active{
-	background-color: var(--color-main-light);
-}
+   box-shadow: inset 0 -2px var(--color-main-dark);
 
+}
 
 
 .nav-icon-label {
@@ -430,7 +435,6 @@ a{
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-
 
 
 
