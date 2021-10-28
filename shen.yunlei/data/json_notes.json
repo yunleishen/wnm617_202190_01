@@ -1,0 +1,8 @@
+{
+	"notes":[
+		"JSON Files always start with either an array [] or an object {}",
+		"JSON Files cannot have comments, so put any notes in this array",
+		"Commas go inbetween items in objects or arrays, but there should never be a trailing comma",
+		"All"
+	]
+}
