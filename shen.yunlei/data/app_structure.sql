@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Oct 27, 2021 at 08:10 PM
+-- Generation Time: Nov 02, 2021 at 02:50 PM
 -- Server version: 5.7.35-cll-lve
 -- PHP Version: 7.3.27
 
@@ -66,7 +66,7 @@ CREATE TABLE `track_users` (
   `id` int(13) NOT NULL,
   `name` varchar(64) NOT NULL,
   `username` varchar(64) NOT NULL,
-  `emails` varchar(128) NOT NULL,
+  `email` varchar(128) NOT NULL,
   `password` varchar(32) NOT NULL,
   `img` varchar(256) NOT NULL,
   `date_create` datetime NOT NULL

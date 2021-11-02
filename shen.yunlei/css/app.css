@@ -479,6 +479,20 @@ a{
    font-size: 0.9em;
 }
 
+.choosepetslist{
+	padding: 1em;
+	text-align: center;
+	border-radius: 1em;
+
+}
+.choosepetslist img{
+	border-radius: 4px;
+}
+
+
+
+
+
 /* PET PROFILE PAGE */
 
 .container{

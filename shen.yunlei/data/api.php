@@ -49,8 +49,9 @@ die(
    json_encode(
       makeQuery(
          makeConn(),
-         "SELECT * FROM locations_data WHERE id = ?",
+         "SELECT * FROM track_users WHERE id = ?",
          [6]
-      )
+      ),
+      JSON_NUMERIC_CHECK
    )
 );
