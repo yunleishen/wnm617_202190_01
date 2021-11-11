@@ -212,6 +212,8 @@ a{
 	text-decoration: none;
 }
 
+
+#page-animal-edit,
 #page-animal-add{
 	background-color: var(--color-main-medium);
 }

@@ -23,6 +23,7 @@ $(()=>{
          case "page-pets": PetsPage();break;
          case "page-animal-profile": AnimalProfilePage();break;
          case "page-user": UserProfilePage();break;
+         case "page-animal-edit": AnimalEditPage(); break;
 
 
       }
@@ -52,6 +53,14 @@ $(()=>{
       $.mobile.navigate("#page-animal-profile");
    })
 
+
+   .on("click",".animal-profile-middle li",function(e){
+      let id = $(this).index();
+      $(this).addClass("active")
+         .siblings().removeClass("active");
+      $(this).closest(".animal-profile-middle").next().children().eq(id).addClass("active")
+         .siblings().removeClass("active");
+   })
 
    .on("click","[data-activate]",function(e){
       let target = $(this).data("activate");

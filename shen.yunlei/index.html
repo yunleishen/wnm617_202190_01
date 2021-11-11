@@ -22,9 +22,13 @@
 	<script src="js/functions.js"></script>
 	<script src="js/pages.js"></script>
 	<script src="js/parts.js"></script>
+	<script src="js/maps.js"></script>
 
 
-
+	<!-- API Key: AIzaSyBwGmg04k_hs5mLmELOw5LTWK7E1pZ4cXU -->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwGmg04k_hs5mLmELOw5LTWK7E1pZ4cXU"async>
+		
+	</script>
 
 	<script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
 </head>
@@ -119,8 +123,7 @@
 	        <div class="map"></div>
 	           <div class="floater" style="top:20%;left:20%;">
 	            <a href="#" data-activate="#recent-add-modal">
-	            	<svg class="icon-place" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M14.4 6l-.24-1.2c-.09-.46-.5-.8-.98-.8H6c-.55 0-1 .45-1 1v15c0 .55.45 1 1 1s1-.45 1-1v-6h5.6l.24 1.2c.09.47.5.8.98.8H19c.55 0 1-.45 1-1V7c0-.55-.45-1-1-1h-4.6z"/>
-	            	</svg>
+	            
 	            </a>
 	         </div>
 
@@ -140,107 +143,7 @@
 	  	<header data-role="header"><h1>Pets</h1></header>
       <div data-role="main">
          <div class="overscroll floater fill-parent">
-            <div class="animallist">
-              <!--  <li class="animallist-item" data-template="#animallist-item-template">
-               	   <a href="#page-animal-profile" class="display-flex">
-				      <div class="flex-none animallist-item-image">
-				         <img src="lib/img/dog-chewie.png" alt="">
-				      </div>
-				      <div class="flex-stretch animallist-item-body">
-				      	<div class="text-box">
-					         <div class="animallist-item-name">Chewie</div>
-					         <div class="animallist-item-age"><strong>Age - </strong>3</div>
-					         <div class="animallist-item-breed"><strong>Breed - </strong>Cavalier King Charles</div>
-					     </div>
-				      </div>
-				   </a>
-               </li>
-               <li class="animallist-item" data-template="#animallist-item-template">
-               	   <a href="#page-animal-profile" class="display-flex">
-				      <div class="flex-none animallist-item-image">
-				         <img src="lib/img/dog-gigi.jpeg" alt="">
-				      </div>
-				      <div class="flex-stretch animallist-item-body">
-				      	<div class="text-box">
-				      		<div class="animallist-item-name">Gigi</div>
-					         <div class="animallist-item-age"><strong>Age - </strong>2</div>
-					         <div class="animallist-item-breed"><strong>Breed - </strong>Japanese Chin</div>
-					    </div>			 
-				      </div>
-				   </a>
-               </li>
-               <li class="animallist-item" data-template="#animallist-item-template">
-               	   <a href="#page-animal-profile" class="display-flex">
-				      <div class="flex-none animallist-item-image">
-				         <img src="lib/img/dog-jack.jpeg" alt="">
-				      </div>
-				      <div class="flex-stretch animallist-item-body">
-				      	<div class="text-box">
-					         <div class="animallist-item-name">Jack</div>
-					         <div class="animallist-item-age"><strong>Age - </strong>3</div>
-					         <div class="animallist-item-breed"><strong>Breed - </strong>Bulldog</div>
-					    </div>
-				      </div>
-				   </a>
-               </li>
-               <li class="animallist-item" data-template="#animallist-item-template">
-               	   <a href="#page-animal-profile" class="display-flex">
-				      <div class="flex-none animallist-item-image">
-				         <img src="lib/img/dog-jasmine.jpeg" alt="">
-				      </div>
-				      <div class="flex-stretch animallist-item-body">
-				      	<div class="text-box">
-					         <div class="animallist-item-name">Jasmine</div>
-					         <div class="animallist-item-age"><strong>Age - </strong>1</div>
-					         <div class="animallist-item-breed"><strong>Breed - </strong>Golden Retriever</div>
-					    </div>
-				      </div>
-				   </a>
-               </li>
-               <li class="animallist-item" data-template="#animallist-item-template">
-               	   <a href="#page-animal-profile" class="display-flex">
-				      <div class="flex-none animallist-item-image">
-				         <img src="lib/img/dog-max.jpeg" alt="">
-				      </div>
-				      <div class="flex-stretch animallist-item-body">
-				      	<div class="text-box">
-					         <div class="animallist-item-name">Max</div>
-					         <div class="animallist-item-age"><strong>Age - </strong>4</div>
-					         <div class="animallist-item-breed"><strong>Breed - </strong>Chihuahua</div>
-					    </div>
-				      </div>
-				   </a>
-               </li>
-               <li class="animallist-item" data-template="#animallist-item-template">
-               	   <a href="#page-animal-profile" class="display-flex">
-				      <div class="flex-none animallist-item-image">
-				         <img src="lib/img/dog-lucky.jpeg" alt="">
-				      </div>
-				      <div class="flex-stretch animallist-item-body">
-				      	<div class="text-box">
-					         <div class="animallist-item-name">Lucky</div>
-					         <div class="animallist-item-age"><strong>Age - </strong>3</div>
-					         <div class="animallist-item-breed"><strong>Breed - </strong>Bull Terrier</div>
-					    </div>
-				      </div>
-				   </a>
-	           </li>
-              
-               <li class="animallist-item" data-template="#animallist-item-template">
-               	   <a href="#page-animal-profile" class="display-flex">
-				      <div class="flex-none animallist-item-image">
-				         <img src="lib/img/dog-rose.jpeg" alt="">
-				      </div>
-				      <div class="flex-stretch animallist-item-body">
-				      	<div class="text-box">
-					         <div class="animallist-item-name">Rose</div>
-					         <div class="animallist-item-age"><strong>Age - </strong>1</div>
-					         <div class="animallist-item-breed"><strong>Breed - </strong>Corgi</div>
-					    </div>
-				      </div>
-				   </a>
-               </li> -->
-            </div>
+            <div class="animallist"></div>
          </div>
 
          <div class="floater bottom right">
@@ -271,10 +174,45 @@
          <header data-role="header" class="floating-header">
 	         <ul>
 	            <li><a href="#" data-rel="back">Back</a></li>
+	            <li class="flex-stretch"></li>
+            	<li><a href="#page-animal-edit">Edit</a></li>
 	         </ul>
 	      </header>
       </div>
 
+   </section>
+
+   <section data-role="page" id="page-animal-edit">
+      <header data-role="header">
+         <h1>Edit Pet</h1>
+         <ul>
+            <li><a href="#" data-rel="back">Cancel</a></li>
+         </ul>
+      </header>
+      <div data-role="main">
+         <form class="fill-parent display-flex flex-vertical" id="animal-edit-form" data-ajax="false">
+            <div class="flex-stretch position-relative">
+               <div class="fill-parent overscroll position-absolute padding-md">
+                  <div class="form-control">
+                     <label for="animal-edit-name" class="form-label">Name</label>
+                     <input type="text" id="animal-edit-name" class="form-input" data-role="none" placeholder="Name">
+                  </div>
+                  <div class="form-control">
+                     <label for="animal-edit-type" class="form-label">Type</label>
+                     <input type="text" id="animal-edit-type" class="form-input" data-role="none" placeholder="Name">
+                  </div>
+                  <div class="form-control">
+                     <label for="animal-edit-breed" class="form-label">Breed</label>
+                     <input type="text" id="animal-edit-breed" class="form-input" data-role="none" placeholder="Name">
+                  </div>
+               </div>
+            </div>
+            <div class="flex-none padding-md">
+               <!-- <button type="submit" class="form-button">Save</button> -->
+               <a href="#page-list" class="form-button">Save</a>
+            </div>
+         </form>
+      </div>
    </section>
 
    <section data-role="page" id="page-animal-add">
@@ -293,12 +231,12 @@
                      <input type="text" id="animal-add-name" class="form-input" data-role="none" placeholder="Name">
                   </div>
                   <div class="form-control">
-                     <label for="animal-add-breed" class="form-label">Breed</label>
-                     <input type="text" id="animal-add-breed" class="form-input" data-role="none" placeholder="Breed">
+                     <label for="animal-add-type" class="form-label">Type</label>
+                     <input type="text" id="animal-add-type" class="form-input" data-role="none" placeholder="type">
                   </div>
                   <div class="form-control">
-                     <label for="animal-add-age" class="form-label">Age</label>
-                     <input type="text" id="animal-add-age" class="form-input" data-role="none" placeholder="Age">
+                     <label for="animal-add-breed" class="form-label">Breed</label>
+                     <input type="text" id="animal-add-breed" class="form-input" data-role="none" placeholder="breed">
                   </div>
                </div>
             </div>
