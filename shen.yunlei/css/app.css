@@ -385,6 +385,15 @@ a{
    transform: translate(0);
 }
 
+.modal-drawer.basin {
+   height: 30vh;
+   padding: 1em;
+   box-shadow: none;
+}
+.modal-drawer.basin .modal-body {
+   box-shadow: 0 0 5px rgba(0,0,0,0.15);
+   border-radius: 1em;
+}
 
 .modal-drawer .modal-body {
    flex: 1 1 100%;

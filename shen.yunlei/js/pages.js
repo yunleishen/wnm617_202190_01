@@ -35,9 +35,28 @@ const HomePage = async() => {
       return r;
    },[]);
 
-
    let mapEl = await makeMap("#page-home .map");
    makeMarkers(mapEl,animals);
+
+   let {infoWindow,map,markers} = mapEl.data();
+   markers.forEach((o,i)=>{
+      o.addListener("click",function(){
+
+         /* Simple Example */
+         // sessionStorage.animalId = animals[i].animal_id;
+         // $.mobile.navigate("#page-animal-profile")
+
+         /* InfoWindow Example */
+         infoWindow.open(map,o);
+         infoWindow.setContent(makeAnimalPopup(animals[i]))
+
+         /* Activate Example */
+         // $("#recent-drawer")
+         //    .addClass("active")
+         //    .find(".modal-body")
+         //    .html(makeAnimalPopup(animals[i]))
+      })
+   });
 }
 
 
@@ -76,11 +95,20 @@ const AnimalEditPage = async() => {
    });
 
    let [animal] = animal_result;
-   $(".animal-profile-top img").attr("src",animal.img);
-
-   $("#animal-edit-name").val(animal.name);
-   $("#animal-edit-type").val(animal.type);
-   $("#animal-edit-breed").val(animal.breed);
+   
+   $("#animal-edit-form .fill-parent").html(
+      makeAnimalFormInputs(animal,"animal-edit")
+   );
+}
+const AnimalEditAdd = async() => {
+   $("#animal-add-form .fill-parent").html(
+      makeAnimalFormInputs({
+         name:'',
+         type:'',
+         breed:'',
+         description:''
+      },"animal-add")
+   );
 }
 
 

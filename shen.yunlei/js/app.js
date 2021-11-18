@@ -3,13 +3,6 @@
 // DOCUMENT READY
 $(()=>{
 
-   // query({
-   //    type:'locations_by_animal_id',
-   //    params:[4]
-   // }).then(d=>{
-   //    console.log(d)
-   // })
-
    checkUserId();
 
    // Event Delegation
@@ -24,7 +17,7 @@ $(()=>{
          case "page-animal-profile": AnimalProfilePage();break;
          case "page-user": UserProfilePage();break;
          case "page-animal-edit": AnimalEditPage(); break;
-
+         case "page-animal-add": AnimalAddPage(); break;
 
       }
    })

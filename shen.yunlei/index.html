@@ -121,16 +121,19 @@
 		<header data-role="header"><h1>Map</h1></header>
 		<div data-role="main">
 	        <div class="map"></div>
-	           <div class="floater" style="top:20%;left:20%;">
-	            <a href="#" data-activate="#recent-add-modal">
-	            
-	            </a>
-	         </div>
 
 	         <div class="floater bottom right">
 	            <a href="#page-location-choose-animal" class="btn-circle">&plus;</a>
 	         </div>
-	      	</div>
+	         
+	         <div id="recent-drawer" class="modal">
+	            <div class="modal-back transparent" data-deactivate="#recent-drawer"></div>
+	            <div class="modal-drawer basin top">
+	               <div class="modal-body"></div>
+	            </div>
+	         </div>
+
+	    </div>
 
 		<footer data-role="footer" data-template='#footer-template'></footer>
 
@@ -188,7 +191,7 @@
          <ul>
             <li><a href="#" data-rel="back">Cancel</a></li>
             <li class="flex-stretch"></li>
-            <li><a href="#">Delete</a></li>
+            <li><a href="#" style="color:red">Delete</a></li>
          </ul>
       </header>
       <div data-role="main">
