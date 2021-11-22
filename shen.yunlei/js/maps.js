@@ -36,16 +36,15 @@ const makeMarkers = (mapEl,mapLocs) => {
                width:40,
                height:40,
             }
+
          }
       });
       markers.push(m);
-      setMapBounds(mapEl,mapLocs);
    });
 
    mapEl.data("markers",markers);
+   setMapBounds(mapEl,mapLocs);
 }
-
-
 
 
 const setMapBounds = (mapEl,mapLocs) => {

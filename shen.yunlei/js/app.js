@@ -45,6 +45,12 @@ $(()=>{
       sessionStorage.animalId = $(this).data("id");
       $.mobile.navigate("#page-animal-profile");
    })
+   .on("click","[data-setnavigateback]",function(e){
+      $("#location-navigateback").val($(this).data("setnavigateback"))
+   })
+   .on("click",".js-navigate-back",function(e){
+      window.history.go(+$("#location-navigateback").val());
+   })
 
 
    .on("click",".animal-profile-middle li",function(e){

@@ -266,11 +266,9 @@ a{
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-image: url(../lib/img/map.jpg);
-	background-size: cover;
-	background-position: center;
-
 }
+
+
 
 /* Floater */
 
@@ -386,7 +384,7 @@ a{
 }
 
 .modal-drawer.basin {
-   height: 30vh;
+   height: 10vh;
    padding: 1em;
    box-shadow: none;
 }
@@ -399,10 +397,16 @@ a{
    flex: 1 1 100%;
 }
 
+/* MARER POPUP */
 
+.animal-popup-body {
+   pointer-events: none;
+   width: 150px;
+}
 
-
-
+.animal-popup-btn{
+	text-decoration: none;
+}
 
 .icon{
 	fill: var(--color-main-dark);
@@ -459,12 +463,11 @@ a{
 }
 .animallist-item {
 	background-color: var(--color-main-light);
-    box-shadow: 0 5px 10px rgb(0 0 0 / 15%);
-    border-radius: 1em;
     overflow: hidden;
     font-weight: normal;
 }
 .animallist-item-image img {
+	border-radius: 100px;
     width: 100px;
     height: 100px;
     object-fit: cover;
@@ -476,6 +479,10 @@ a{
 	position: relative;
 	padding-left: 2em;
 	vertical-align: middle;
+
+
+
+  border-bottom: 0.25px solid black;
 }
 .text-box{
 	  margin: 0;
@@ -510,13 +517,25 @@ a{
 /* PET PROFILE PAGE */
 
 .animal-profile-top {
-   flex: none;
-   height: 40vh;
+   height: 50vh;
 }
+
 .animal-profile-bottom {
    flex: 1 1 auto;
    position: relative;
 }
+
+.map-animal-profile{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 50%;
+	
+}
+
+
+
 
 
 .floating-header {

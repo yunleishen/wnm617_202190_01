@@ -85,7 +85,7 @@ const AnimalProfilePage = async() => {
       type:'locations_by_animal_id',
       params:[sessionStorage.animalId]
    });
-   let mapEl = await makeMap("#page-animal-profile .map");
+   let mapEl = await makeMap("#page-animal-profile .map-animal-profile");
    makeMarkers(mapEl,locations_result);
 }
 const AnimalEditPage = async() => {

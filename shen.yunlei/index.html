@@ -119,21 +119,20 @@
 	<!-- This is  home page -->
 	<section data-role="page" id="page-home">
 		<header data-role="header"><h1>Map</h1></header>
-		<div data-role="main">
-	        <div class="map"></div>
+      <div data-role="main">
+         <div class="map"></div>
 
-	         <div class="floater bottom right">
-	            <a href="#page-location-choose-animal" class="btn-circle">&plus;</a>
-	         </div>
-	         
-	         <div id="recent-drawer" class="modal">
-	            <div class="modal-back transparent" data-deactivate="#recent-drawer"></div>
-	            <div class="modal-drawer basin top">
-	               <div class="modal-body"></div>
-	            </div>
-	         </div>
+         <div class="floater bottom right">
+            <a href="#page-location-choose-animal" class="btn-circle" data-setnavigateback="-3">&plus;</a>
+         </div>
 
-	    </div>
+         <div id="recent-drawer" class="modal">
+            <div class="modal-back transparent" data-deactivate="#recent-drawer"></div>
+            <div class="modal-drawer basin top">
+               <div class="modal-body"></div>
+            </div>
+         </div>
+      </div>
 
 		<footer data-role="footer" data-template='#footer-template'></footer>
 
@@ -143,15 +142,19 @@
 	<!-- This is pets list page -->
 
 	  <section data-role="page" id="page-pets">
-	  	<header data-role="header"><h1>Pets</h1></header>
+      <header data-role="header">
+         <h1>Pets</h1>
+         <ul>
+            <li></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#page-animal-edit">Add</a></li>
+         </ul>
+      </header>
       <div data-role="main">
          <div class="overscroll floater fill-parent">
             <div class="animallist"></div>
          </div>
 
-         <div class="floater bottom right">
-            <a href="#page-animal-add" class="btn-circle">&plus;</a>
-         </div>
       </div>
       <footer data-role="footer" data-template="#footer-template"></footer>
    </section>
@@ -163,16 +166,12 @@
    <section data-role="page" id="page-animal-profile">
       <div data-role="main" class="display-flex flex-vertical">
          <div class="animal-profile-top">
-            <img src="lib/img/map.jpeg">
+            <img src="">
+            <h2>Description</h2>
          </div>
-         <div class="animal-profile-middle">
-            <ul class="nav-tab">
-               <li>map</li>
-               <li>description</li>
-            </ul>
-         </div>
+
          <div class="animal-profile-bottom">
-            <div class="map"></div>
+            <div class="map-animal-profile"></div>
          </div>
          <header data-role="header" class="floating-header">
 	         <ul>
@@ -348,31 +347,9 @@
 				<li class="floater right"><a href="#" class="btn-menu ui-link" data-activate="#recent-add-modal"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg></a></li>
 			</ul>
 		</header>
-		<div data-role="main">
 
-	      	<div class="container overscroll fill-parent">
-		         <div class="user-avatar">
-		         	<img src="lib/img/user.jpg" alt="">
-		         </div>
-
-		         <h2>Yunlei</h2>
-
-		         <div class="container-body">
-			         <h3>
-			         	<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><g><rect fill="none" height="24" width="24" y="0"/></g><g><path d="M12,2c-4.2,0-8,3.22-8,8.2c0,3.18,2.45,6.92,7.34,11.23c0.38,0.33,0.95,0.33,1.33,0 C17.55,17.12,20,13.38,20,10.2C20,5.22,16.2,2,12,2z M12,12c-1.1,0-2-0.9-2-2c0-1.1,0.9-2,2-2c1.1,0,2,0.9,2,2 C14,11.1,13.1,12,12,12z" enable-background="new"/></g></svg>
-			         	<strong>Seattle</strong>
-			         </h3>
-			         <hr>
-			         <h3>Info</h3>
-			         	<p>
-			         		Lorem ipsum dolor sit amet consectetur adipisicing, elit. Odit ipsum in unde excepturi culpa, quas expedita, consequuntur ad, harum error consectetur velit, perspiciatis. Animi reprehenderit amet voluptatem iusto quae cum.
-		         		</p>
-		         </div>
-
-	      		
-	      	</div>
-		</div>
-
+      	<div data-role="main" class="overscroll"></div>
+      	
 		<footer data-role="footer" data-template='#footer-template'></footer>
 
      		<!-- left drawer -->
@@ -388,10 +365,10 @@
             </div>
 
             <div class="modal-body display-flex">
-            	<div class="flex-stretch">Edit Profile</div>
-            	<div class="flex-none">
+            	<div class="flex-stretch">Settings</div>
+            	<a  href="#page-user-edit" class="flex-none">
             		<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M3 17.46v3.04c0 .28.22.5.5.5h3.04c.13 0 .26-.05.35-.15L17.81 9.94l-3.75-3.75L3.15 17.1c-.1.1-.15.22-.15.36zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
-            	</div>
+            	</a>
             </div>
 
             <div class="btn-logout">
@@ -400,6 +377,28 @@
          </div>
       </div>
 	</section>
+
+
+	<section data-role="page" id="page-user-edit">
+      <header data-role="header">
+         <h1>User Edit</h1>
+         <ul>
+            <li><a href="#" data-rel="back">Back</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#" data-rel="back">Save</a></li>
+         </ul>
+      </header>
+      <div data-role="main">
+         
+         <form class="fill-parent display-flex flex-vertical" id="user-edit-form" data-ajax="false">
+            <div class="flex-stretch position-relative">
+               <div class="fill-parent overscroll position-absolute padding-md">
+                  
+               </div>
+            </div>
+         </form>
+      </div>
+   </section>
 
 	<!-- This is animal profile page -->
 	<section data-role="page" id="page-chewie-profile">

@@ -24,19 +24,19 @@ const makeUserProfile = (o) => `
 <div>
    <h2>${o.name}</h2>
    <h3>&commat;${o.username}</h3>
-   <div><a href="#page-use">Settings</a></div>
+
 </div>
 `;
 
 const makeAnimalPopup = o => `
 <div class="display-flex animal-jump" data-id="${o.animal_id}">
-   <div class="flex-none animal-popup-image">
-      <img src="${o.img}" alt="">
-   </div>
    <div class="flex-stretch animal-popup-body padding-md">
-      <div class="animal-popup-name">${o.name}</div>
+      <div class="animal-popup-name"><strong>${o.name}</strong></div>
       <div class="animal-popup-type"><strong>Type</strong> ${o.type}</div>
       <div class="animal-popup-breed"><strong>Breed</strong> ${o.breed}</div>
+   </div>
+   <div class="padding-md">
+   <a href="#page-animal-profile" class="animal-popup-btn">More</a>
    </div>
 </div>
 `;
@@ -88,5 +88,24 @@ ${FormControlTextarea({
    displayname:"Description",
    placeholder:"Type The Animal Description",
    value:o.description
+})}
+`;
+
+const makeUserFormInputs = (o,namespace) => `
+${FormControlInput({
+   namespace:namespace,
+   name:"name",
+   displayname:"Name",
+   type:"text",
+   placeholder:"Type The User Name",
+   value:o.name
+})}
+${FormControlInput({
+   namespace:namespace,
+   name:"username",
+   displayname:"Type",
+   type:"text",
+   placeholder:"Type The User Handle",
+   value:o.username
 })}
 `;
