@@ -22,6 +22,7 @@
 	<script src="js/functions.js"></script>
 	<script src="js/pages.js"></script>
 	<script src="js/parts.js"></script>
+	<script src="js/forms.js"></script>
 	<script src="js/maps.js"></script>
 
 
@@ -147,7 +148,7 @@
          <ul>
             <li></li>
             <li class="flex-stretch"></li>
-            <li><a href="#page-animal-edit">Add</a></li>
+            <li><a href="#" class="btn-menu ui-link" data-activate="#modal-animal-add">Add</a></li>
          </ul>
       </header>
       <div data-role="main">
@@ -157,6 +158,35 @@
 
       </div>
       <footer data-role="footer" data-template="#footer-template"></footer>
+
+    <!-- middle drawer -->
+	   <div class="modal" id="modal-animal-add">
+         <div class="modal-back" data-deactivate="#modal-animal-add"></div>
+	         <form class="modal-popup form" id="animal-add-form" data-ajax="false">
+	            <div class="modal-head">Add Pet</div>
+	            <div class="modal-body">
+	            	<div class="form-control">
+		                  <label for="animal-add-name" class="form-label">Name</label>
+		                  <input type="text" id="animal-add-name" class="form-input" data-role="none" placeholder="Name">
+		            	<div class="form-control">
+			                  <label for="animal-add-type" class="form-label">Type</label>
+			                  <input type="text" id="animal-add-type" class="form-input" data-role="none" placeholder="Type">
+		               </div>
+		            	<div class="form-control">
+			                  <label for="animal-add-breed" class="form-label">Breed</label>
+			                  <input type="text" id="animal-add-breed" class="form-input" data-role="none" placeholder="Breed">
+		               </div>
+		            	<div class="form-control">
+			                  <label for="animal-add-descripton" class="form-label">Description</label>
+			                  <input type="text" id="animal-add-descripton" class="form-input" data-role="none" placeholder="Descripton">
+		               </div>
+	               </div>
+	           </div>
+	            <div class="modal-foot">
+	            	<button type="submit" class="form-button">Save</button>
+	            </div>
+	         </form>
+      </div>
    </section>
 
 
@@ -194,63 +224,22 @@
          </ul>
       </header>
       <div data-role="main">
+
          <form class="fill-parent display-flex flex-vertical" id="animal-edit-form" data-ajax="false">
             <div class="flex-stretch position-relative">
                <div class="fill-parent overscroll position-absolute padding-md">
-                  <div class="form-control">
-                     <label for="animal-edit-name" class="form-label">Name</label>
-                     <input type="text" id="animal-edit-name" class="form-input" data-role="none" placeholder="Name">
-                  </div>
-                  <div class="form-control">
-                     <label for="animal-edit-type" class="form-label">Type</label>
-                     <input type="text" id="animal-edit-type" class="form-input" data-role="none" placeholder="Name">
-                  </div>
-                  <div class="form-control">
-                     <label for="animal-edit-breed" class="form-label">Breed</label>
-                     <input type="text" id="animal-edit-breed" class="form-input" data-role="none" placeholder="Name">
-                  </div>
+                  
                </div>
             </div>
             <div class="flex-none padding-md">
-               <!-- <button type="submit" class="form-button">Save</button> -->
-               <a href="#page-list" class="form-button">Save</a>
+               <button type="submit" class="form-button">Save</button>
             </div>
          </form>
+
       </div>
    </section>
 
-   <section data-role="page" id="page-animal-add">
-      <header data-role="header">
-         <h1>Add Pet</h1>
-         <ul>
-            <li><a href="#" data-rel="back">Cancel</a></li>
-         </ul>
-      </header>
-      <div data-role="main">
-         <form class="fill-parent display-flex flex-vertical" id="animal-add-form" data-ajax="false">
-            <div class="flex-stretch position-relative">
-               <div class="fill-parent overscroll position-absolute padding-md">
-                  <div class="form-control">
-                     <label for="animal-add-name" class="form-label">Name</label>
-                     <input type="text" id="animal-add-name" class="form-input" data-role="none" placeholder="Name">
-                  </div>
-                  <div class="form-control">
-                     <label for="animal-add-type" class="form-label">Type</label>
-                     <input type="text" id="animal-add-type" class="form-input" data-role="none" placeholder="type">
-                  </div>
-                  <div class="form-control">
-                     <label for="animal-add-breed" class="form-label">Breed</label>
-                     <input type="text" id="animal-add-breed" class="form-input" data-role="none" placeholder="breed">
-                  </div>
-               </div>
-            </div>
-            <div class="flex-none padding-md">
-               <!-- <button type="submit" class="form-button">Save</button> -->
-               <a href="#page-pets" class="form-button">Save</a>
-            </div>
-         </form>
-      </div>
-   </section>
+  
 
    <section data-role="page" id="page-location-choose-animal">
       <header data-role="header">
@@ -262,51 +251,12 @@
          </ul>
       </header>
       <div data-role="main">
-         <div class="overscroll floater fill-parent">
-         <div data-role="main">
-         	<ul class="animallist">
-	         	<li class="choosepetslist display-flex">
-	         		<div class="flex-none animallist-item-image">
-				        <img src="lib/img/dog-chewie.png" alt="">
-	         	 		<div class="flex-stretch">Chewie</div>
-	         	 	</div>
-
-	         		<div class="flex-stretch animallist-item-image">
-				        <img src="lib/img/dog-gigi.jpeg" alt="">
-	         	 		<div class="flex-stretch">Gigi</div>
-	         	 	</div>
-
-	         		<div class="flex-none animallist-item-image">
-				        <img src="lib/img/dog-jack.jpeg" alt="">
-	 	        	 	<div class="flex-stretch">Jack</div>
-	 	        	</div>
-	         	</li>
-	         	<li class="choosepetslist display-flex">
-	         		<div class="flex-none animallist-item-image">
-				        <img src="lib/img/dog-jasmine.jpeg" alt="">
-		         	 	<div class="flex-stretch">Jasmine</div>
-		         	</div>
-
-	         		<div class="flex-stretch animallist-item-image">
-				        <img src="lib/img/dog-max.jpeg" alt="">	
-	         	 		<div class="flex-stretch">Max</div>
-	         	 	</div>
-
-	         		<div class="flex-none animallist-item-image">
-				        <img src="lib/img/dog-lucky.jpeg" alt="">
-	         	 		<div class="flex-stretch">Lucky</div>
-	         	 	</div>
-	         	</li> 
-
-	         	<li class="choosepetslist display-flex">
-	         		<div class="flex-none animallist-item-image">
-				        <img src="lib/img/dog-rose.jpeg" alt="">
-	         			<div class="flex-stretch">Rose</div>
-	         		</div>
-	         	</li>
-	         </ul>
-
-        </div>
+         <input type="hidden" id="location-animal-choice">
+         <div>
+            <a href="#page-animal-add">Make a new animal</a>
+         </div>
+         <p>Or</p>
+         <div class="form-select location-animal-choice-select"></div>
       </div>
    </section>
 
@@ -320,7 +270,9 @@
          </ul>
       </header>
       <div data-role="main">
-         <h3>Location</h3>
+         <input type="hidden" id="location-lat">
+         <input type="hidden" id="location-lng">
+         <div class="map"></div>
       </div>
    </section>
 
@@ -334,7 +286,14 @@
          </ul>
       </header>
       <div data-role="main">
-         <h3>Description</h3>
+         <form action="" style="padding:1em">
+            <input type="hidden" id="location-navigateback" value="-3">
+
+            <div class="form-control">
+               <label for="location-description" class="form-label">Describe the animal</label>
+               <textarea id="location-description" class="form-input" data-role="none" placeholder="What did it look like?"></textarea>
+            </div>
+         </form>
       </div>
    </section>
 
@@ -344,7 +303,7 @@
 		<header data-role="header">
 			<h1>User Profile</h1>
 			<ul>
-				<li class="floater right"><a href="#" class="btn-menu ui-link" data-activate="#recent-add-modal"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg></a></li>
+				<li class="floater right"><a href="#" class="btn-menu ui-link" data-activate="#modal-settings"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg></a></li>
 			</ul>
 		</header>
 
@@ -353,43 +312,56 @@
 		<footer data-role="footer" data-template='#footer-template'></footer>
 
      		<!-- left drawer -->
-	   <div class="modal" id="recent-add-modal">
-         <div class="modal-back" data-deactivate="#recent-add-modal"></div>
-         <div class="modal-drawer bottom">
+	   <div class="modal" id="modal-settings">
+         <div class="modal-back" data-deactivate="#modal-settings"></div>
+         <div class="modal-drawer bottom overscroll">
 
             <div class="modal-head display-flex">
                <div class="flex-stretch">More</div>
                <div>
-                  <svg data-deactivate="#recent-add-modal" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M18.3 5.71c-.39-.39-1.02-.39-1.41 0L12 10.59 7.11 5.7c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41L10.59 12 5.7 16.89c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0L12 13.41l4.89 4.89c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L13.41 12l4.89-4.89c.38-.38.38-1.02 0-1.4z"/></svg>
+                  <svg data-deactivate="#modal-settings" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M18.3 5.71c-.39-.39-1.02-.39-1.41 0L12 10.59 7.11 5.7c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41L10.59 12 5.7 16.89c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0L12 13.41l4.89 4.89c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L13.41 12l4.89-4.89c.38-.38.38-1.02 0-1.4z"/></svg>
                </div>
             </div>
 
-            <div class="modal-body display-flex">
-            	<div class="flex-stretch">Settings</div>
-            	<a  href="#page-user-edit" class="flex-none">
-            		<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M3 17.46v3.04c0 .28.22.5.5.5h3.04c.13 0 .26-.05.35-.15L17.81 9.94l-3.75-3.75L3.15 17.1c-.1.1-.15.22-.15.36zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
-            	</a>
+            <div class="modal-body">
+            	<div class="display-flex more-box">
+	            	<div class="flex-stretch">Settings</div>
+	            	<a  href="#page-user-edit" class="flex-none">
+	            		<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M3 17.46v3.04c0 .28.22.5.5.5h3.04c.13 0 .26-.05.35-.15L17.81 9.94l-3.75-3.75L3.15 17.1c-.1.1-.15.22-.15.36zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+	            	</a>
+	            </div>
+
+	            <div class="display-flex more-box">
+	            	<div class="flex-stretch">Password</div>
+	            	<a  href="#page-user-edit-password" class="flex-none">
+	            		<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><g><path d="M0,0h24v24H0V0z" fill="none"/></g><g><g><path d="M2,17h20v2H2V17z M3.15,12.95L4,11.47l0.85,1.48l1.3-0.75L5.3,10.72H7v-1.5H5.3l0.85-1.47L4.85,7L4,8.47L3.15,7l-1.3,0.75 L2.7,9.22H1v1.5h1.7L1.85,12.2L3.15,12.95z M9.85,12.2l1.3,0.75L12,11.47l0.85,1.48l1.3-0.75l-0.85-1.48H15v-1.5h-1.7l0.85-1.47 L12.85,7L12,8.47L11.15,7l-1.3,0.75l0.85,1.47H9v1.5h1.7L9.85,12.2z M23,9.22h-1.7l0.85-1.47L20.85,7L20,8.47L19.15,7l-1.3,0.75 l0.85,1.47H17v1.5h1.7l-0.85,1.48l1.3,0.75L20,11.47l0.85,1.48l1.3-0.75l-0.85-1.48H23V9.22z"/></g></g></svg>
+	            	</a>
+	            </div>
+
+	            <div class="display-flex more-box">
+	            	<div class="js-logout flex-stretch">Logout</div>
+	            	<a class="flex-none">
+	            		<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><g><path d="M0,0h24v24H0V0z" fill="none"/></g><g><path d="M17,8l-1.41,1.41L17.17,11H9v2h8.17l-1.58,1.58L17,16l4-4L17,8z M5,5h7V3H5C3.9,3,3,3.9,3,5v14c0,1.1,0.9,2,2,2h7v-2H5V5z"/></g></svg>
+	            	</a>
+	            </div>
             </div>
 
-            <div class="btn-logout">
-            	<button class="form-button js-logout">Log Out</button>
-         	</div>
          </div>
       </div>
 	</section>
 
 
-	<section data-role="page" id="page-user-edit">
+
+   <section data-role="page" id="page-user-edit">
       <header data-role="header">
          <h1>User Edit</h1>
          <ul>
             <li><a href="#" data-rel="back">Back</a></li>
             <li class="flex-stretch"></li>
-            <li><a href="#" data-rel="back">Save</a></li>
+            <li><a href="#" class="js-submituseredit">Save</a></li>
          </ul>
       </header>
-      <div data-role="main">
-         
+      <div data-role="main">  
          <form class="fill-parent display-flex flex-vertical" id="user-edit-form" data-ajax="false">
             <div class="flex-stretch position-relative">
                <div class="fill-parent overscroll position-absolute padding-md">
@@ -400,48 +372,36 @@
       </div>
    </section>
 
-	<!-- This is animal profile page -->
-	<section data-role="page" id="page-chewie-profile">
-		<header data-role="header">
-			<h1>Chewie</h1>
-			<ul>
-				<li><a href="#" data-rel="back"><svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><rect fill="none" height="24" width="24"/><g><path d="M16.88,2.88L16.88,2.88c-0.49-0.49-1.28-0.49-1.77,0l-8.41,8.41c-0.39,0.39-0.39,1.02,0,1.41l8.41,8.41 c0.49,0.49,1.28,0.49,1.77,0l0,0c0.49-0.49,0.49-1.28,0-1.77L9.54,12l7.35-7.35C17.37,4.16,17.37,3.37,16.88,2.88z"/></g></svg></a></li>
-			</ul>
-		</header>
-		<div data-role="main">
-			<h2>Bio</h2>
-			<h2>Locations</h2>
+   <section data-role="page" id="page-user-edit-password">
+      <header data-role="header">
+         <h1>Edit Password</h1>
+         <ul>
+            <li><a href="#" data-rel="back">Back</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#" class="js-submituserpassword">Save</a></li>
+         </ul>
+      </header>
+      <div data-role="main">
+         
+         <form class="fill-parent display-flex flex-vertical" id="user-edit-password-form" data-ajax="false">
+            <div class="flex-stretch position-relative">
+               <div class="fill-parent overscroll position-absolute padding-md">
+                  <div class="form-control">
+                     <label for="user-password-initial" class="form-label">Type Password</label>
+                     <input type="password" id="user-password-initial" class="form-input" data-role="none" placeholder="Type A New Password">
+                  </div>
+                  <div class="form-control">
+                     <label for="user-password-confirm" class="form-label">Confirm Password</label>
+                     <input type="password" id="user-password-confirm" class="form-input" data-role="none" placeholder="Confirm New Password">
+                  </div>
+               </div>
+            </div>
+         </form>
+      </div>
+   </section>
 
-		</div>
-	</section>
 
-	<section data-role="page" id="page-jasmine-profile">
-		<header data-role="header">
-			<h1>Jasmine</h1>
-			<ul>
-				<li><a href="#" data-rel="back"><svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><rect fill="none" height="24" width="24"/><g><path d="M16.88,2.88L16.88,2.88c-0.49-0.49-1.28-0.49-1.77,0l-8.41,8.41c-0.39,0.39-0.39,1.02,0,1.41l8.41,8.41 c0.49,0.49,1.28,0.49,1.77,0l0,0c0.49-0.49,0.49-1.28,0-1.77L9.54,12l7.35-7.35C17.37,4.16,17.37,3.37,16.88,2.88z"/></g></svg></a></li>
-			</ul>
-		</header>
-		<div data-role="main">
-			<h2>Bio</h2>
-			<h2>Locations</h2>
 
-		</div>
-	</section>
-
-	<section data-role="page" id="page-chester-profile">
-		<header data-role="header">
-			<h1>Chester</h1>
-			<ul>
-				<li><a href="#" data-rel="back"><svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><rect fill="none" height="24" width="24"/><g><path d="M16.88,2.88L16.88,2.88c-0.49-0.49-1.28-0.49-1.77,0l-8.41,8.41c-0.39,0.39-0.39,1.02,0,1.41l8.41,8.41 c0.49,0.49,1.28,0.49,1.77,0l0,0c0.49-0.49,0.49-1.28,0-1.77L9.54,12l7.35-7.35C17.37,4.16,17.37,3.37,16.88,2.88z"/></g></svg></a></li>
-			</ul>
-		</header>
-		<div data-role="main">
-			<h2>Bio</h2>
-			<h2>Locations</h2>
-
-		</div>
-	</section>
 
 
 	<!-- This is navigation -->

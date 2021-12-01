@@ -28,6 +28,15 @@ const makeUserProfile = (o) => `
 </div>
 `;
 
+const makeAnimalProfile = (o) => `
+<div>
+   <h2>${o.name}</h2>
+   <div><strong>type</strong> ${o.type}</div>
+   <div><strong>breed</strong> ${o.breed}</div>
+   <div><strong>description</strong> <p>${o.description}</p></div>
+</div>
+`;
+
 const makeAnimalPopup = o => `
 <div class="display-flex animal-jump" data-id="${o.animal_id}">
    <div class="flex-stretch animal-popup-body padding-md">
@@ -108,4 +117,12 @@ ${FormControlInput({
    placeholder:"Type The User Handle",
    value:o.username
 })}
+`;
+
+const makeAnimalChoiceSelect = ({animals,name,chosen=0}) => `
+<select id="${name}">
+   ${templater(o=>`
+      <option value="${o.id}" ${o.id===chosen?'selected':''}>${o.name}</option>
+   `)(animals)}
+</select>
 `;

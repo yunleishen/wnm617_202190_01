@@ -96,6 +96,79 @@ function makeStatement($data) {
                ORDER BY l.animal_id, l.date_create DESC
                ",$p);
 
+            /* CREATE */
+         case "insert_user":
+            $r = makeQuery($c,"SELECT id FROM `track_users` WHERE `username`=? OR `email` = ?",$p);
+            if(count($r['result'])) return ["error"=>"Username or Email already exists"];
+
+            $r = makeQuery($c,"INSERT INTO
+               `track_users`
+               (`username`, `email`, `password`, `img`, `date_create`)
+               VALUES
+               (?, ?, md5(?), 'http://via.placeholder.com/400/?text=USER', NOW())
+               ",$p,false);
+            return ["id" => $c->lastInsertId()];
+
+         case "insert_animal":
+            $r = makeQuery($c,"INSERT INTO
+               `track_animals`
+               (`user_id`, `name`, `type`, `breed`, `description`, `img`, `date_create`)
+               VALUES
+               (?, ?, ?, ?, ?, 'http://via.placeholder.com/400/?text=ANIMAL', NOW())
+               ",$p,false);
+            return ["id" => $c->lastInsertId()];
+
+         case "insert_location":
+            $r = makeQuery($c,"INSERT INTO
+               `track_locations`
+               (`animal_id`, `lat`, `lng`, `description`, `photo`, `icon`, `date_create`)
+               VALUES
+               (?, ?, ?, ?, 'http://via.placeholder.com/400/?text=PHOTO', 'http://via.placeholder.com/400/?text=ICON', NOW())
+               ",$p,false);
+            return ["id" => $c->lastInsertId()];
+
+                     /* UPDATE */
+
+         case "update_user":
+            $r = makeQuery($c,"UPDATE
+               `track_users`
+               SET
+                  `username` = ?,
+                  `name` = ?,
+                  `email` = ?
+               WHERE `id` = ?
+               ",$p,false);
+            return ["result" => "success"];
+
+         case "update_user_password":
+            $r = makeQuery($c,"UPDATE
+               `track_users`
+               SET
+                  `password` = md5(?)
+               WHERE `id` = ?
+               ",$p,false);
+            return ["result" => "success"];
+
+         case "update_animal":
+            $r = makeQuery($c,"UPDATE
+               `track_animals`
+               SET
+                  `name` = ?,
+                  `type` = ?,
+                  `breed` = ?,
+                  `description` = ?
+               WHERE `id` = ?
+               ",$p,false);
+            return ["result" => "success"];
+
+         case "update_location":
+            $r = makeQuery($c,"UPDATE
+               `track_locations`
+               SET
+                  `description` = ?
+               WHERE `id` = ?
+               ",$p,false);
+            return ["result" => "success"];
 
          default: return ["error"=>"No Matched Type"];
       }

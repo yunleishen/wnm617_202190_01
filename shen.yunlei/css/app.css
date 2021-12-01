@@ -88,8 +88,15 @@ a{
 .padding-lg { padding:2em; }
 
 /* SIGN IN/UP LOGOUT */
-.btn-logout{
-	background-color: var(--color-neutral-light);
+
+.more-box{
+	padding: 1.2em;
+	border-bottom: 1px solid var(--color-neutral-dark);
+}
+
+.js-logout{
+	background: transparent;
+	border: none;
 }
 
 .text-signup{
@@ -220,7 +227,9 @@ a{
 
 /* FORM ELEMENTS */
 
-.form{}
+.form{
+	background-color: var(--color-main-medium);
+}
 .form-control{
 	margin: 1em 0;
 }
@@ -231,7 +240,7 @@ a{
     border: 1px solid var(--color-main-light);
     margin: 0;
     padding: 0.8em 1em;
-    border-radius: 0.2em;
+    border-radius: 8px;
     outline: 0;
     font: inherit;
 }
@@ -335,16 +344,18 @@ a{
 }
 .modal-body {
     padding: 10px;
-    background-color: var(--color-neutral-light);
+    background-color: var(--color-main-medium);
 }
 .modal-head{
-    background-color: var(--color-neutral-light);
+	text-align: center;
+	color: var(--color-main-medium);
+    background-color: var(--color-neutral-dark);
     line-height: 4rem;
     padding: 0 1em;
 }
 
 .modal-foot {
-    background-color: var(--color-neutral-light);
+    background-color: var(--color-main-medium);
     line-height: 2rem;
     padding: 0 2em;
 }
@@ -363,6 +374,18 @@ a{
    transition: all 0.3s;
    box-shadow: 0 0 5px rgba(0,0,0,0.15);
 }
+
+.modal-drawer.middle{
+	height: 60%;
+	width: 70%;
+
+
+
+
+}
+
+
+
 .modal-drawer.left,
 .modal-drawer.right {
    height: 100%;
@@ -373,7 +396,7 @@ a{
 
 .modal-drawer.top,
 .modal-drawer.bottom {
-   height: 30vh;
+   height: 50vh;
    width: 100%;
 }
 .modal-drawer.top { top: 0; transform:translateY(-100%); }

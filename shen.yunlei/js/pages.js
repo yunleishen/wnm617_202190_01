@@ -69,6 +69,18 @@ const UserProfilePage = async() => {
    let [user] = result;
    $("#page-user [data-role='main']").html(makeUserProfile(user));
 }
+const UserEditPage = async() => {
+   let user_result = await resultQuery({
+      type:'user_by_id',
+      params:[sessionStorage.userId]
+   });
+
+   let [user] = user_result;
+   
+   $("#user-edit-form .fill-parent").html(
+      makeUserFormInputs(user,"user-edit")
+   );
+}
 
 
 const AnimalProfilePage = async() => {
@@ -100,8 +112,8 @@ const AnimalEditPage = async() => {
       makeAnimalFormInputs(animal,"animal-edit")
    );
 }
-const AnimalEditAdd = async() => {
-   $("#animal-add-form .fill-parent").html(
+const AnimalAddModal = async() => {
+   $("#animal-add-modal .fill-parent").html(
       makeAnimalFormInputs({
          name:'',
          type:'',
@@ -111,7 +123,32 @@ const AnimalEditAdd = async() => {
    );
 }
 
+const LocationSetLocationPage = async() => {
+   let mapEl = await makeMap("#page-location-set-location .map");
+   makeMarkers(mapEl,[]);
 
+   mapEl.data("map").addListener("click",function(e){
+      $("#location-lat").val(e.latLng.lat())
+      $("#location-lng").val(e.latLng.lng())
+      makeMarkers(mapEl,[e.latLng]);
+   })
+}
+
+const LocationChooseAnimalPage = async() => {
+   let result = await resultQuery({
+      type:'animals_by_user_id',
+      params:[sessionStorage.userId]
+   });
+
+   console.log(result)
+
+   $(".location-animal-choice-select").html(
+      makeAnimalChoiceSelect({
+         animals:result,
+         name:'location-animal-choice-select'
+      })
+   );
+}
 
 
 
