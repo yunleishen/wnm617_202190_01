@@ -133,7 +133,7 @@ a{
 	overflow: hidden;
 }
 
-
+.header,
 [data-role="header"]{
 	flex: none;
 	height: var(--header-height);
@@ -157,9 +157,7 @@ a{
 }
 
 
-
-
-
+.header ul,
 [data-role="header"] ul,
 [data-role="footer"] ul {
 	display: flex;
@@ -180,11 +178,13 @@ a{
    vertical-align: middle;
 }
 
+.header a,
 [data-role="footer"] a,
 [data-role="header"] a {
 	display: block;
 }
 
+.header a,
 [data-role="header"] a {
 	padding: 0 1em;
 }
@@ -220,6 +220,11 @@ a{
 }
 
 
+#page-location-choose-animal,
+#page-location-set-location,
+#page-location-description,
+#page-user-edit,
+#page-user-edit-password,
 #page-animal-edit,
 #page-animal-add{
 	background-color: var(--color-main-medium);
@@ -540,8 +545,19 @@ a{
 /* PET PROFILE PAGE */
 
 .animal-profile-top {
+	position: relative;
    height: 50vh;
 }
+	.animal-profile-top img{
+	  display: block;
+	  margin-top: 4.5rem;
+	  margin-left: auto;
+	  margin-right: auto;
+	  width: 50%;
+		height: 200px;
+		width: 200px;
+		border-radius: 100px;
+	}
 
 .animal-profile-bottom {
    flex: 1 1 auto;
@@ -601,12 +617,31 @@ a{
 
 
 
+.filter-bar {
+	background-color: var(--color-neutral-light);
+	color: var(--color-neutral-dark);
+   display: flex;
+   padding: 0 1em;
+   width: 100%;
+   overflow-x: auto;
+   gap: 1em;
+}
+.filter-bar a {
+   padding: 0;
+}
 
-
-
-
-
-
-
+.image-picker.replace {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-position: center;
+   background-size: contain;
+   background-repeat: no-repeat;
+}
+.image-picker.replace input {
+   display: none;
+}
 
 

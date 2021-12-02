@@ -18,7 +18,7 @@ $(()=>{
          case "page-user-edit": UserEditPage(); break;
          case "page-animal-profile": AnimalProfilePage(); break;
          case "page-animal-edit": AnimalEditPage(); break;
-         case "page-animal-add": AnimalAddModal(); break;
+         case "page-animal-add": AnimalAddPage(); break;
          case "page-location-choose-animal": LocationChooseAnimalPage(); break;
          case "page-location-set-location": LocationSetLocationPage(); break;
       }
@@ -44,7 +44,6 @@ $(()=>{
 
 
 
-
    // FORM ANCHOR CLICKS
 
    .on("click",".js-submituseredit",function(e) {
@@ -59,8 +58,11 @@ $(()=>{
       e.preventDefault();
       locationAddForm();
    })
-
-
+   .on("click","[data-filter]",function(e){
+      let {filter,value} = $(this).data();
+      if(value=="") PetsPage();
+      else checkFilter(filter,value);
+   })
 
    // ON CHANGE
 
@@ -69,6 +71,36 @@ $(()=>{
    })
 
 
+   .on("change",".image-picker.replace input",function(e){
+      checkUpload(this.files[0])
+      .then(d=>{
+         console.log(d);
+         $("#user-upload-filename").val("uploads/"+d.result);
+         $(this).parent().css({
+            "background-image":`url(uploads/${d.result})`
+         });
+      })
+   })
+   .on("click",".js-submituserupload",function(e) {
+      let image = $("#user-upload-filename").val();
+      query({
+         type:"update_user_image",
+         params: [image,sessionStorage.userId]
+      }).then(d=>{
+         if(d.error) throw(d.error);
+
+         history.go(-1);
+      })
+   })
+   .on("click",".js-animal-delete",function(e){
+      query({
+         type:"delete_animal",
+         params: [sessionStorage.animalId]
+      }).then(d=>{
+         history.go(-2);
+      })
+   })
+
 
    // ANCHOR CLICKS
    .on("click",".js-logout",function(e) {
@@ -76,7 +108,6 @@ $(()=>{
       sessionStorage.removeItem("userId");
       checkUserId();
    })
-
    .on("click",".animal-jump",function(e) {
       if(!$(this).data("id")) throw("No ID on element");
       sessionStorage.animalId = $(this).data("id");
@@ -89,18 +120,21 @@ $(()=>{
       window.history.go(+$("#location-navigateback").val());
    })
 
+
    .on("click",".js-chooseanimal",function(e){
       $("#location-animal-choice").val(sessionStorage.animalId);
    })
 
 
-   .on("click",".animal-profile-middle li",function(e){
+   .on("click",".animal-profile-middle h2",function(e){
       let id = $(this).index();
       $(this).addClass("active")
          .siblings().removeClass("active");
       $(this).closest(".animal-profile-middle").next().children().eq(id).addClass("active")
          .siblings().removeClass("active");
    })
+
+
 
    .on("click","[data-activate]",function(e){
       let target = $(this).data("activate");

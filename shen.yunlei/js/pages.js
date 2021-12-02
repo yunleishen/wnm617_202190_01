@@ -13,14 +13,14 @@ const resultQuery = async (options) => {
 
 
 const PetsPage = async() => {
-   // destructure
-   let result = await resultQuery({
+   const animals = await resultQuery({
       type:'animals_by_user_id',
       params:[sessionStorage.userId]
    });
 
-   $("#page-pets .animallist").html(makePetsPage(result));
+   makePetsPageSet(animals);
 }
+
 
 
 const HomePage = async() => {
@@ -90,8 +90,8 @@ const AnimalProfilePage = async() => {
    });
 
    let [animal] = animal_result;
-   $(".animal-profile-top img").attr("src",animal.img);
-   $(".animal-profile-bottom .description").html(animal.description);
+   $(".animal-profile-top>img").attr("src",animal.img);
+   $(".animal-profile-middle .description").html(animal.description);
 
    let locations_result = await resultQuery({
       type:'locations_by_animal_id',
@@ -112,8 +112,8 @@ const AnimalEditPage = async() => {
       makeAnimalFormInputs(animal,"animal-edit")
    );
 }
-const AnimalAddModal = async() => {
-   $("#animal-add-modal .fill-parent").html(
+const AnimalAddPage = async() => {
+   $("#animal-add-form .fill-parent").html(
       makeAnimalFormInputs({
          name:'',
          type:'',

@@ -1,5 +1,5 @@
 
-const makeMap = async (target="", center={ lat:47.659964062584386, lng:-122.41855156123147 }) => {
+const makeMap = async (target="", center={ lat:47.621397659500424, lng:-122.3490404022935 }) => {
    await checkData(()=>window.google);
    let mapEl = $(target);
 
@@ -25,7 +25,7 @@ const makeMarkers = (mapEl,mapLocs) => {
    if(markers) markers.forEach(o=>o.setMap(null));
 
    markers = [];
-
+   
    mapLocs.forEach(o=>{
       let m = new google.maps.Marker({
          position: o,
@@ -34,9 +34,8 @@ const makeMarkers = (mapEl,mapLocs) => {
             url:o.icon,
             scaledSize: {
                width:40,
-               height:40,
+               height:40
             }
-
          }
       });
       markers.push(m);

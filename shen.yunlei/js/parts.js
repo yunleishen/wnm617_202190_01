@@ -72,30 +72,33 @@ ${FormControlInput({
    name:"name",
    displayname:"Name",
    type:"text",
-   placeholder:"Type The Animal Name",
+   placeholder:"New Pet Name",
    value:o.name
 })}
+
 ${FormControlInput({
    namespace:namespace,
    name:"type",
    displayname:"Type",
    type:"text",
-   placeholder:"Type The Animal Type",
+   placeholder:"The New Pet Type",
    value:o.type
 })}
+
 ${FormControlInput({
    namespace:namespace,
    name:"breed",
    displayname:"Breed",
    type:"text",
-   placeholder:"Type The Animal Breed",
+   placeholder:"The New Pet Breed",
    value:o.breed
 })}
+
 ${FormControlTextarea({
    namespace:namespace,
    name:"description",
    displayname:"Description",
-   placeholder:"Type The Animal Description",
+   placeholder:"The New Pet Description",
    value:o.description
 })}
 `;
@@ -106,15 +109,16 @@ ${FormControlInput({
    name:"name",
    displayname:"Name",
    type:"text",
-   placeholder:"Type The User Name",
+   placeholder:"The User Name",
    value:o.name
 })}
+
 ${FormControlInput({
    namespace:namespace,
    name:"username",
    displayname:"Type",
    type:"text",
-   placeholder:"Type The User Handle",
+   placeholder:"The User Handle",
    value:o.username
 })}
 `;
@@ -126,3 +130,28 @@ const makeAnimalChoiceSelect = ({animals,name,chosen=0}) => `
    `)(animals)}
 </select>
 `;
+
+const makePetsPageSet = (arr,target="#page-pets .animallist") => {
+   $(".filter-bar").html(makeFilterList(arr));
+   $(target).html(makePetsPage(arr));
+}
+
+
+const filterList = (animals,type) => {
+   let a = [...(new Set(animals.map(o=>o[type])))];
+   return templater(o=>`<a href="#" data-filter="${type}" data-value="${o}">${o}</a>`)(a);
+}
+
+
+const makeFilterList = (animals) => {
+   return `
+   <a href="#" data-filter="type" data-value="">All</a>
+   <div>|</div>
+   ${filterList(animals,'type')}
+   <div>|</div>
+   ${filterList(animals,'breed')}
+   `;
+}
+
+
+
