@@ -62,7 +62,6 @@ function makeUpload($file,$folder) {
 
 
 
-
 function makeStatement($data) {
    try{
       $c = makeConn();

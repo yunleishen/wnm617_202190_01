@@ -86,10 +86,12 @@ const userEditPasswordForm = async () => {
 }
 
 const locationAddForm = async () => {
+   console.log("in location add form");
    let animal = $("#location-animal-choice").val();
    let lat = $("#location-lat").val();
    let lng = $("#location-lng").val();
    let description = $("#location-description").val();
+   console.log("params " + animal + " "+ lat + " " + lng + " " + description);
 
    let r = await query({
       type:'insert_location',

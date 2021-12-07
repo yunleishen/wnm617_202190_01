@@ -1,19 +1,17 @@
 
 const makePetsPage = templater((o)=>`
-<div class="animallist-item">
-	<div class="display-flex animal-jump" data-id="${o.id}">
-	   <div class="flex-none animallist-item-image">
-	      <img src="${o.img}" alt="">
-	   </div>
-	   <div class="flex-stretch animallist-item-body">
-		   <div class="text-box">
-		      <div class="animallist-item-name">${o.name}</div>
-		      <div class="animallist-item-type"><strong>Type</strong> ${o.type}</div>
-		      <div class="animallist-item-breed"><strong>Breed</strong> ${o.breed}</div>
-		   </div>
-	   </div>
-	</div>
+
+
+<div class="animallist-item display-inline-block">
+   <div class="animal-jump" data-id="${o.id}">
+      <div class="animallist-item-image">
+         <img src="${o.img}" alt="">
+         <div class="animallist-item-name">${o.name}</div>
+      </div>
+
+   </div>
 </div>
+
 `);
 
 
@@ -31,9 +29,9 @@ const makeUserProfile = (o) => `
 const makeAnimalProfile = (o) => `
 <div>
    <h2>${o.name}</h2>
-   <div><strong>type</strong> ${o.type}</div>
-   <div><strong>breed</strong> ${o.breed}</div>
-   <div><strong>description</strong> <p>${o.description}</p></div>
+   <div style="margin-top:8px"><strong>Type</strong> ${o.type}</div>
+   <div style="margin-top:8px"><strong>Breed</strong> ${o.breed}</div>
+   <div style="margin-top:8px"><strong>Description</strong> <p style=" font-family: var(--font-serif);">${o.description}</p></div>
 </div>
 `;
 
@@ -112,14 +110,21 @@ ${FormControlInput({
    placeholder:"The User Name",
    value:o.name
 })}
-
 ${FormControlInput({
    namespace:namespace,
    name:"username",
-   displayname:"Type",
+   displayname:"Username",
    type:"text",
    placeholder:"The User Handle",
    value:o.username
+})}
+${FormControlInput({
+   namespace:namespace,
+   name:"email",
+   displayname:"Email",
+   type:"email",
+   placeholder:"The Email Address",
+   value:o.email
 })}
 `;
 

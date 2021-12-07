@@ -69,6 +69,7 @@ const UserProfilePage = async() => {
    let [user] = result;
    $("#page-user [data-role='main']").html(makeUserProfile(user));
 }
+
 const UserEditPage = async() => {
    let user_result = await resultQuery({
       type:'user_by_id',
@@ -91,7 +92,7 @@ const AnimalProfilePage = async() => {
 
    let [animal] = animal_result;
    $(".animal-profile-top>img").attr("src",animal.img);
-   $(".animal-profile-middle .description").html(animal.description);
+   $(".animal-profile-bottom .description").html(makeAnimalProfile(animal));
 
    let locations_result = await resultQuery({
       type:'locations_by_animal_id',
@@ -112,6 +113,7 @@ const AnimalEditPage = async() => {
       makeAnimalFormInputs(animal,"animal-edit")
    );
 }
+
 const AnimalAddPage = async() => {
    $("#animal-add-form .fill-parent").html(
       makeAnimalFormInputs({
@@ -122,6 +124,7 @@ const AnimalAddPage = async() => {
       },"animal-add")
    );
 }
+
 
 const LocationSetLocationPage = async() => {
    let mapEl = await makeMap("#page-location-set-location .map");
@@ -140,6 +143,7 @@ const LocationChooseAnimalPage = async() => {
       params:[sessionStorage.userId]
    });
 
+   //set default value
    console.log(result)
 
    $(".location-animal-choice-select").html(

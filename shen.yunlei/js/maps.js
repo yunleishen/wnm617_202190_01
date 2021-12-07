@@ -27,6 +27,7 @@ const makeMarkers = (mapEl,mapLocs) => {
    markers = [];
    
    mapLocs.forEach(o=>{
+    console.log("are we here?" + o)
       let m = new google.maps.Marker({
          position: o,
          map,
@@ -38,6 +39,8 @@ const makeMarkers = (mapEl,mapLocs) => {
             }
          }
       });
+      console.log("executed")
+      console.log(  );
       markers.push(m);
    });
 
@@ -50,7 +53,9 @@ const setMapBounds = (mapEl,mapLocs) => {
    let {map,markers} = mapEl.data();
    let zoom = 14;
 
+   console.log("are we in setMap")
    if(mapLocs.length==0) {
+        console.log("are we in first if")
       if(window.location.protocol!=='https:') return;
       else {
          navigator.geolocation.getCurrentPosition(p=>{
@@ -69,6 +74,7 @@ const setMapBounds = (mapEl,mapLocs) => {
          });
       }
    } else if(mapLocs.length==1) {
+    console.log("are we in second if")
       map.setCenter(mapLocs[0]);
       map.setZoom(zoom);
    } else {
