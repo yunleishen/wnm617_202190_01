@@ -113,9 +113,33 @@ a{
 }
 
 #page-signin,
-#page-signup{
+#page-signup,
+#page-signup2{
 	background-color: var(--color-main-medium);
 }
+
+.empty-box{
+	background-color: var(--color-main-medium);	
+}
+
+.thumbnail {
+  position:relative;
+  display:inline-block;
+  width:6em;
+  height:6em;
+  border-radius:0.6em;
+  border:0.25em solid white;
+  vertical-align:middle;
+  box-shadow:0 0.15em 0.35em 0.1em rgba(0,0,0,0.2);
+  margin:0.5em;
+  
+  background-position:center;
+  background-size:cover;
+}
+.thumbnail input {
+   display: none;
+}
+
 
 
 /*PAGE ELEMENTS*/
@@ -554,18 +578,25 @@ a{
 /* PET PROFILE PAGE */
 
 .animal-profile-top {
+	margin: auto;
 	position: relative;
-   height: 30%;
+	height: 30%;
+	width: 90%;
+
+	border-bottom: 0.1px solid black;
 }
 	.animal-profile-top img{
-	  display: block;
-	  margin-top:5rem;
-	  margin-left: auto;
-	  margin-right: auto;
-	  width: auto;
-		height: 50%;
+   	margin-top: 22%;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		height: 60%;
+	  background-size:contain; 
+	  background-position:center center; 
+	  background-repeat:no-repeat; 
 
-		border-radius: 100px;
+
+	  border-radius: 200px;
 	}
 
 .animal-profile-bottom {
@@ -629,6 +660,53 @@ a{
 
 /* USER PROFILE PAGE */
 
+.user-profile-image{
+	margin: auto;
+	position: relative;
+	height: 30%;
+	width: 90%;
+
+}
+
+	.user-profile-image img{
+   	margin-top: 1rem;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		height: 100%;
+		border-radius: 8px;
+
+   	background-image: contain;
+
+	}
+
+	.animal-profile-top svg,
+	.user-profile-image svg{
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		width: 40%;
+		margin-top: -8%;
+		margin-right: 0;
+	}
+
+
+
+.image-picker.replace {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-position: center;
+   background-size: contain;
+   background-repeat: no-repeat;
+
+}
+.image-picker.replace input {
+   display: none;
+}
+
 #recent-add-modal .modal-body svg{
 	vertical-align: middle;
 }
@@ -650,19 +728,7 @@ a{
    padding: 0;
 }
 
-.image-picker.replace {
-   position: absolute;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 100%;
-   background-position: center;
-   background-size: contain;
-   background-repeat: no-repeat;
-}
-.image-picker.replace input {
-   display: none;
-}
+
 
 
 .form-select select {

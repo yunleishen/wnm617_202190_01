@@ -82,7 +82,7 @@
 		</div>
 	</section>
 
-	<section data-role="page" id="page-signup">
+<!-- 	<section data-role="page" id="page-signup">
 		<div data-role="main" class="display-flex flex-vertical">
 			<div class="flex-stretch"></div>
 
@@ -112,8 +112,60 @@
 	            </div>
 			</form>
 		</div>
+	</section> -->
 
-	</section>
+	   <section data-role="page" id="page-signup">
+      <div data-role="main" class="display-flex flex-vertical">
+         <div class="flex-stretch"></div>
+         <form data-ajax="false" class="form signin-form" id="signup-form" style="padding:10px">
+            <div class="form-control">
+               <label for="signup-email" class="form-label">Email Address</label>
+               <input class="form-input" type="text" id="signup-email" data-role="none" placeholder="Email">
+            </div>
+            <div class="form-control">
+               <label for="signup-username" class="form-label">Username</label>
+               <input class="form-input" type="text" id="signup-username" data-role="none" placeholder="Username">
+            </div>
+            <div class="form-control">
+               <label for="signup-password" class="form-label">New Password</label>
+               <input class="form-input" type="password" id="signup-password" data-role="none" placeholder="Password">
+            </div>
+            <div class="form-control">
+               <label for="signup-password2" class="form-label">Confirm Password</label>
+               <input class="form-input" type="password" id="signup-password2" data-role="none" placeholder="Confirm">
+            </div>
+            <div class="form-control">
+               <input type="submit" value="Sign Up" class="form-button" data-role="none">
+            </div>
+            <div class="form-control small centered">
+               Already have an account? <a href="#page-signin">Sign In</a>
+            </div>
+         </form>
+         <div class="flex-stretch"></div>
+      </div>
+   </section>
+
+	   <section data-role="page" id="page-signup2">
+	      <div data-role="main" class="display-flex flex-vertical">
+	         <div class="flex-stretch empty-box"></div>
+	         <form data-ajax="false" class="form signin-form" id="signup-form2" style="padding:10px">
+	            <div class="form-control">
+	               <label for="signup-name" class="form-label">Name</label>
+	               <input class="form-input" type="text" id="signup-name" data-role="none" placeholder="Your Name">
+	            </div>
+	            <div class="form-control">
+	               <input type="hidden" id="signup-image-name">
+	               <label class="image-picker thumbnail">
+	                  <input type="file" data-role="none">
+	               </label>
+	            </div>
+	            <div class="form-control">
+	               <input type="submit" value="Start" class="form-button" data-role="none">
+	            </div>
+	         </form>
+	         <div class="flex-stretch empty-box"></div>
+	      </div>
+	   </section>
 
 
 	<!-- HOME/MAP PAGE -->
@@ -189,9 +241,12 @@
 
    <section data-role="page" id="page-animal-profile">
       <div data-role="main" class="display-flex flex-vertical">
-         <div class="animal-profile-top">
+        <div class="animal-profile-top">
             <img src="">
-         </div>
+			   <a  href="#page-animal-edit-upload">
+			      <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 0 30 30" width="30px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M14.12 4l1.83 2H20v12H4V6h4.05l1.83-2h4.24M15 2H9L7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-3.17L15 2zm-3 7c1.65 0 3 1.35 3 3s-1.35 3-3 3-3-1.35-3-3 1.35-3 3-3m0-2c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5z"/></svg>
+			   </a>
+        </div>
 
          <div class="animal-profile-middle"></div>
 
@@ -218,6 +273,25 @@
       </div>
 
    </section>
+
+	  <section data-role="page" id="page-animal-edit-upload">
+		  <header data-role="header">
+		     <h1>Upload Photo</h1>
+		     <ul>
+		        <li><a href="#" data-rel="back">Back</a></li>
+		        <li class="flex-stretch"></li>
+		     </ul>
+		  </header>
+		  <div data-role="main">
+		     <input type="hidden" id="animal-upload-filename">
+		     <label class="image-picker replace">
+		        <input type="file" data-role="none">
+		     </label>
+		  </div>
+	        <div class="flex-none padding-md">
+        		<button type="submit" class="form-button js-submitanimalupload">Save</button>
+        	</div>
+	  </section>
 
    <section data-role="page" id="page-animal-edit">
       <header data-role="header">
@@ -334,13 +408,13 @@
 	            		<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M3 17.46v3.04c0 .28.22.5.5.5h3.04c.13 0 .26-.05.35-.15L17.81 9.94l-3.75-3.75L3.15 17.1c-.1.1-.15.22-.15.36zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
 	            	</a>
 	            </div>
-
+<!-- 
 	            <div class="display-flex more-box">
 	            	<div class="js-logout flex-stretch">Upload Photo</div>
 	            	<a  href="#page-user-upload" class="flex-none">
 	            		<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M14.12 4l1.83 2H20v12H4V6h4.05l1.83-2h4.24M15 2H9L7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-3.17L15 2zm-3 7c1.65 0 3 1.35 3 3s-1.35 3-3 3-3-1.35-3-3 1.35-3 3-3m0-2c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5z"/></svg>
 	            	</a>
-	            </div>
+	            </div> -->
 
 	            <div class="display-flex more-box">
 	            	<div class="flex-stretch">Update Password</div>
@@ -365,7 +439,7 @@
 
    <section data-role="page" id="page-user-edit">
       <header data-role="header">
-         <h1>User Edit</h1>
+         <h1>Edit User Profile</h1>
          <ul>
             <li><a href="#" data-rel="back">Back</a></li>
             <li class="flex-stretch"></li>
@@ -391,7 +465,6 @@
          <ul>
             <li><a href="#" data-rel="back">Back</a></li>
             <li class="flex-stretch"></li>
-            <li><a href="#" class="js-submituserupload">Save</a></li>
          </ul>
       </header>
       <div data-role="main">
@@ -400,6 +473,9 @@
             <input type="file" data-role="none">
          </label>
       </div>
+        <div class="flex-none padding-md">
+            <button type="submit" class="form-button js-submituserupload">Save</button>
+        </div>
    </section>
 
    <section data-role="page" id="page-user-edit-password">

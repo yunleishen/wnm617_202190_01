@@ -33,18 +33,18 @@ const animalEditForm = async () => {
    history.go(-1);
 }
 
-const userAddForm = async () => {
+const checkSignup = async () => {
+   let email = $("#signup-email").val();
    let username = $("#signup-username").val();
    let password = $("#signup-password").val();
-   let comfirm = $("#signup-password2").val();
-
+   let confirm = $("#signup-password2").val();
 
    if(password!=confirm)
       throw("Passwords don't match: You should handle this in some way.");
 
    let r = await query({
       type:'insert_user',
-      params:[email,password]
+      params:[username,email,password]
    });
 
    if(r.error) throw(r.error);
@@ -52,6 +52,20 @@ const userAddForm = async () => {
    sessionStorage.userId = r.id;
 
    $.mobile.navigate("#page-signup2");
+}
+
+const checkSignup2 = async () => {
+   let name = $("#signup-name").val();
+   let image = $("#signup-image-name").val();
+
+   let r = await query({
+      type:'update_user_onboard',
+      params:[name,image,sessionStorage.userId]
+   });
+
+   if(r.error) throw(r.error);
+
+   $.mobile.navigate("#page-pets");
 }
 
 const userEditForm = async () => {

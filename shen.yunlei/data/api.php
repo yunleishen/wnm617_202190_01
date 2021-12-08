@@ -125,7 +125,7 @@ function makeStatement($data) {
 
             /* CREATE */
          case "insert_user":
-            $r = makeQuery($c,"SELECT id FROM `track_users` WHERE `username`=? OR `email` = ?",$p);
+            $r = makeQuery($c,"SELECT id FROM `track_users` WHERE `username`=? OR `email` = ?",[$p[0],$p[1]]);
             if(count($r['result'])) return ["error"=>"Username or Email already exists"];
 
             $r = makeQuery($c,"INSERT INTO
@@ -156,6 +156,16 @@ function makeStatement($data) {
 
                      /* UPDATE */
 
+         case "update_user_onboard":
+            $r = makeQuery($c,"UPDATE
+               `track_users`
+               SET
+                  `name` = ?,
+                  `img` = ?
+               WHERE `id` = ?
+               ",$p,false);
+            return ["result" => "success"];                    
+
          case "update_user":
             $r = makeQuery($c,"UPDATE
                `track_users`
@@ -176,6 +186,14 @@ function makeStatement($data) {
                ",$p,false);
             return ["result" => "success"];
 
+         case "update_user_image":
+            $r = makeQuery($c,"UPDATE
+               `track_users`
+               SET `img` = ?
+               WHERE `id` = ?
+               ",$p,false);
+            return ["result" => "success"];
+
          case "update_animal":
             $r = makeQuery($c,"UPDATE
                `track_animals`
@@ -184,6 +202,14 @@ function makeStatement($data) {
                   `type` = ?,
                   `breed` = ?,
                   `description` = ?
+               WHERE `id` = ?
+               ",$p,false);
+            return ["result" => "success"];
+
+         case "update_animal_image":
+            $r = makeQuery($c,"UPDATE
+               `track_animals`
+               SET `img` = ?
                WHERE `id` = ?
                ",$p,false);
             return ["result" => "success"];
@@ -199,7 +225,8 @@ function makeStatement($data) {
 
          default: return ["error"=>"No Matched Type"];
 
-                  /* DELETE */
+
+         /* DELETE */
          case "delete_animal":
             $r = makeQuery($c,"DELETE FROM `track_animals` WHERE `id` = ?",$p,false);
             return ["result" => "success"];
@@ -208,17 +235,6 @@ function makeStatement($data) {
       return ["error"=>"Bad Data"];
    }
 }
-
-
-$data = json_decode(file_get_contents("php://input"));
-
-die(
-   json_encode(
-      makeStatement($data),
-      JSON_NUMERIC_CHECK
-   )
-);
-
 
 if(!empty($_FILES)) {
    $r = makeUpload("image","../uploads/");

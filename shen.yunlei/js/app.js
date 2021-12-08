@@ -30,6 +30,14 @@ $(()=>{
       e.preventDefault();
       checkSigninForm();
    })
+   .on("submit", "#signup-form", function(e) {
+      e.preventDefault();
+      checkSignup();
+   })
+   .on("submit", "#signup-form2", function(e) {
+      e.preventDefault();
+      checkSignup2();
+   })
    .on("submit","#list-add-form",function(e) {
       e.preventDefault();
    })
@@ -71,11 +79,11 @@ $(()=>{
    })
 
 
-   .on("change",".image-picker.replace input",function(e){
+   .on("change",".image-picker input",function(e){
       checkUpload(this.files[0])
       .then(d=>{
          console.log(d);
-         $("#user-upload-filename").val("uploads/"+d.result);
+         $(this).parent().prev().val("uploads/"+d.result);
          $(this).parent().css({
             "background-image":`url(uploads/${d.result})`
          });
@@ -92,6 +100,20 @@ $(()=>{
          history.go(-1);
       })
    })
+   .on("click",".js-submitanimalupload",function(e) {
+      let image = $("#animal-upload-filename").val();
+      query({
+         type:"update_animal_image",
+         params: [image,sessionStorage.animalId]
+      }).then(d=>{
+         if(d.error) throw(d.error);
+
+         history.go(-1);
+      })
+   })
+
+
+
    .on("click",".js-animal-delete",function(e){
       query({
          type:"delete_animal",
