@@ -150,7 +150,7 @@ function makeStatement($data) {
                `track_locations`
                (`animal_id`, `lat`, `lng`, `description`, `photo`, `icon`, `date_create`)
                VALUES
-               (?, ?, ?, ?, 'http://via.placeholder.com/400/?text=PHOTO', 'http://via.placeholder.com/400/?text=ICON', NOW())
+               (?, ?, ?, ?, 'http://via.placeholder.com/400/?text=PHOTO', 'https://cdn-icons.flaticon.com/png/512/3737/premium/3737726.png?token=exp=1639032312~hmac=f0853049ec648ddf31afb7dfe1a38313', NOW())
                ",$p,false);
             return ["id" => $c->lastInsertId()];
 
