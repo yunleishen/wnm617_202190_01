@@ -607,6 +607,7 @@ a{
 
 	}
 
+
 .animal-profile-bottom {
 	height: 70%;
    flex: 1 1 auto;
@@ -623,13 +624,15 @@ a{
 }
 
 .animal-profile-bottom .description{
-	margin: 16px;
 	height: 50%;
-
 	font-size: 1em;
 	text-align: left;
 }
-
+	.animal-profile-bottom .bio{
+		height: 60%;
+		margin-left: 16px;
+		margin-right: 16px;
+	}
 
 
 
@@ -667,7 +670,6 @@ a{
 
 
 /* USER PROFILE PAGE */
-
 .user-profile-image{
 	margin: auto;
 	position: relative;
@@ -677,7 +679,7 @@ a{
 }
 
 	.user-profile-image img{
-   	margin-top: 1rem;
+   	margin-top: 2rem;
 		display: block;
 		margin-left: auto;
 		margin-right: auto;
@@ -698,6 +700,7 @@ a{
 		margin-right: 0;
 
 	}
+
 
 .name-animal,
 .name-user{
@@ -736,7 +739,7 @@ a{
 }
 
 .filter-bar {
-	background-color: var(--color-neutral-light);
+	background-color: var(--color-main-light);
 	color: var(--color-neutral-dark);
    display: flex;
    padding: 0 1em;

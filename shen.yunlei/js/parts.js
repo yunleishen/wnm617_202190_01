@@ -32,12 +32,13 @@ const makeUserProfile = (o) => `
 `;
 
 const makeAnimalProfile = (o) => `
-<div>
+
    <h2 class="name-animal">${o.name}</h2>
-   <div style="margin-top:8px"><strong>Type</strong> ${o.type}</div>
-   <div style="margin-top:8px"><strong>Breed</strong> ${o.breed}</div>
-   <div style="margin-top:8px"><strong>Description</strong> <p style=" font-family: var(--font-serif);">${o.description}</p></div>
-</div>
+   <div class="bio overscroll">
+      <div style="margin-top:8px"><strong>Type</strong> ${o.type}</div>
+      <div style="margin-top:8px"><strong>Breed</strong> ${o.breed}</div>
+      <div style="margin-top:8px"><strong>Description</strong> <p style=" font-family: var(--font-serif);">${o.description}</p></div>
+   </div>
 `;
 
 const makeAnimalPopup = o => `
