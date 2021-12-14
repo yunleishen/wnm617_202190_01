@@ -26,6 +26,9 @@ const makeUserProfile = (o) => `
 <div>
    <h2 class="name-user">${o.name}</h2>
    <h3>&commat;${o.username}</h3>
+   <p>
+   
+   </p>
 </div>
 
 
