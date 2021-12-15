@@ -26,9 +26,29 @@ const makeUserProfile = (o) => `
 <div>
    <h2 class="name-user">${o.name}</h2>
    <h3>&commat;${o.username}</h3>
-   <p>
-   
-   </p>
+   <div class="pet-record">
+      <h3 class="h3-record">Pets Record</h3>
+      <ul>
+         <li class="display-flex">
+            <h4 class="flex-none">Dog</h4>
+            <div class="flex-stretch"></div>
+            <h4 class="flex-none">8</h4>
+         </li>
+
+         <li class="display-flex">
+            <h4 class="flex-none">Cat</h4>
+            <div class="flex-stretch"></div>
+            <h4 class="flex-none">1</h4>
+         </li>
+
+         <li class="display-flex">
+            <h4 class="flex-none">Rabbit</h4>
+            <div class="flex-stretch"></div>
+            <h4 class="flex-none">0</h4>
+         </li>
+
+      </ul>
+   </div>
 </div>
 
 

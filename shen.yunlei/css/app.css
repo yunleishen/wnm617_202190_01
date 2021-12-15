@@ -670,6 +670,24 @@ a{
 
 
 /* USER PROFILE PAGE */
+
+.pet-record{
+	list-style: none;
+	margin-left: 32px;
+	margin-right: 32px;
+}
+	.pet-record ul{
+		padding: 0;
+	}
+
+	.pet-record li{
+		border-bottom: 0.5px solid var(--color-neutral-dark);
+	}
+.h3-record{
+	text-align: left;
+	margin
+}
+
 .user-profile-image{
 	margin: auto;
 	position: relative;
