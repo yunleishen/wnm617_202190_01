@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 14, 2021 at 10:22 PM
+-- Generation Time: Dec 15, 2021 at 09:50 PM
 -- Server version: 5.7.35-cll-lve
 -- PHP Version: 7.3.27
 
@@ -417,7 +417,8 @@ INSERT INTO `track_locations` (`id`, `animal_id`, `lat`, `lng`, `description`, `
 (369, 85, 47.609739, -122.317494, 'Elsa', 'http://via.placeholder.com/400/?text=PHOTO', 'lib/img/pet-food.png', '2021-12-13 23:10:28'),
 (370, 85, 47.531128, -122.378594, 'Elsa', 'http://via.placeholder.com/400/?text=PHOTO', 'lib/img/pet-food.png', '2021-12-13 23:10:49'),
 (371, 79, 47.624563, -122.348053, 'Ella', 'http://via.placeholder.com/400/?text=PHOTO', 'lib/img/pet-food.png', '2021-12-13 23:15:14'),
-(372, 0, 0.000000, 0.000000, 'Test', 'http://via.placeholder.com/400/?text=PHOTO', 'lib/img/pet-food.png', '2021-12-14 19:04:55');
+(372, 0, 0.000000, 0.000000, 'Test', 'http://via.placeholder.com/400/?text=PHOTO', 'lib/img/pet-food.png', '2021-12-14 19:04:55'),
+(373, 88, 47.623194, -122.347647, 'Good dog', 'http://via.placeholder.com/400/?text=PHOTO', 'lib/img/pet-food.png', '2021-12-15 21:44:59');
 
 --
 -- Indexes for dumped tables
@@ -437,7 +438,7 @@ ALTER TABLE `track_locations`
 -- AUTO_INCREMENT for table `track_locations`
 --
 ALTER TABLE `track_locations`
-  MODIFY `id` int(13) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=373;
+  MODIFY `id` int(13) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=374;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 14, 2021 at 10:22 PM
+-- Generation Time: Dec 15, 2021 at 09:49 PM
 -- Server version: 5.7.35-cll-lve
 -- PHP Version: 7.3.27
 
@@ -95,16 +95,17 @@ INSERT INTO `track_animals` (`id`, `user_id`, `name`, `type`, `breed`, `descript
 (49, 3, 'Andershun', 'rabbit', 'teddy', 'Nulla est minim dolor labore magna ipsum incididunt voluptate ad eu ad. Nulla laborum voluptate minim eu nostrud nisi et tempor irure. Amet ex labore voluptate velit eu sint veniam voluptate.', 'https://via.placeholder.com/400/823fff/?text=Andershun', '2021-06-21 06:36:00'),
 (50, 5, 'Tourmania', 'dog', 'springerdoodle', 'Quis incididunt sunt enim amet voluptate veniam laboris eiusmod minim consequat. Non dolore est voluptate labore sit magna laborum occaecat dolor aute velit. Ullamco magna nostrud officia aute ad ullamco.', 'https://via.placeholder.com/400/819fff/?text=Tourmania', '2021-08-17 05:14:03'),
 (77, 11, 'Anna', 'Dog', 'Labrador', 'Anna is a super smart Labrador. She goes running with the shelter jogging team but isn\'t much of an athlete. She prefers to meander and sniff on her walks. She is house trained and walks well on leash, she isn\'t high energy but does enjoy mental stimulation.', 'uploads/1639460655.929_labrador.jpeg', '2021-12-13 22:43:09'),
-(78, 11, 'Susie', 'Dog', 'Poodle', 'Susie is a sassy little girl! She takes a bit to warm up to new people, but once she\'s comfortable, she\'ll come to you for body rubs. Although she likes being petted, she\'s quite independent and sleeps well in her crate or on a pile of clothes (her favorite spot!).', 'uploads/1639460735.7067_maltese poodle.jpeg', '2021-12-13 22:45:27'),
+(78, 11, 'Susie', 'Dog', 'Poodle', 'Susie is a sassy little girl! She takes a bit to warm up to new people, but once she\'s comfortable, she\'ll come to you for body rubs. Although she likes being petted, she\'s quite independent and sleeps well in her crate or on a pile of clothes (her favorite spot!).', 'uploads/1639620482.1064_maltese poodle.jpeg', '2021-12-13 22:45:27'),
 (79, 11, 'Ella', 'Dog', 'Springerdoodle', 'Ella is a beautiful Springerdoodle. She has some significant shyness around new people so would really benefit from a home familiar with the breed or willing to learn more.', 'uploads/1639460791.9546_Springerdoodle.jpeg', '2021-12-13 22:46:23'),
 (80, 11, 'Diego', 'Dog', 'Yorkshire', 'Diego is an easy-to-manage guy. He likes his chew toys, and loves a car ride, a soft couch, or a lap to snuggle on. He\'s generally gentle, happy and relaxed, and sometimes excited and bouncy.', 'uploads/1639460832.9874_Yorkshire.jpg', '2021-12-13 22:47:05'),
 (81, 11, 'Luke', 'Dog', 'Poodle', 'Luke is a big boy, but a gentle little - upbeat and oh so happy! Luke loves running and playing ball, and he will be an awesome exercise partner and a great outdoor adventure buddy too.', 'uploads/1639460884.6529_poodle2.jpeg', '2021-12-13 22:47:57'),
-(82, 11, 'Nyx', 'Dog', 'Corgi', 'Nyx is totally adorable and will grow to be a gorgeous med/large super companion. He is super playful, mischievous, a problem child and so dog-gone lovable. He loves playing with his toys and a good chase with his 4 siblings.', 'uploads/1639460925.1403_corgi.jpeg', '2021-12-13 22:48:36'),
+(82, 11, 'Nyx', 'Dog', 'Corgi', 'Nyx is totally adorable and will grow to be a gorgeous med/large super companion. He is super playful, mischievous, a problem child and so dog-gone lovable.', 'uploads/1639460925.1403_corgi.jpeg', '2021-12-13 22:48:36'),
 (83, 11, 'Morty', 'Dog', 'Alaskan', 'Morty is currently in a board and train program. He wants to be a good boy and is learning quickly. He is working on impulse control and basic manners. He can be a little fearful at times and is wary of meeting new people.', 'uploads/1639460965.3275_alaskan.jpeg', '2021-12-13 22:49:16'),
 (84, 11, 'Kiara', 'Dog', 'Alaskan', 'Kiara is a big love bug who wants to be near her humans, requires lots of daily exercises, and will benefit from continued training. She loves naps, staring out the windows (her favorite spot is her foster family\'s bay window), and playing with their resident dog.', 'uploads/1639461002.1719_alaskan2.jpeg', '2021-12-13 22:49:55'),
 (85, 11, 'Elsa', 'Cat', 'Ragdoll', 'Elsa is a sweet two-year-old cat who has pretty blue eyes. She will let anyone hold her or give her pets, loves sitting in laps, and her squawky meow will remind you whenever you are giving her an inadequate amount of attention or food for her liking.', 'uploads/1639461038.2897_Ragdoll.jpeg', '2021-12-13 22:50:30'),
 (86, 15, 'test', 'test', 'test', 'test', '', '2021-12-14 19:02:44'),
-(87, 15, 'Test2', 'Test2', 'Test2', 'Test2', 'http://via.placeholder.com/400/?text=ANIMAL', '2021-12-14 19:22:34');
+(87, 15, 'Test2', 'Test2', 'Test2', 'Test2', 'http://via.placeholder.com/400/?text=ANIMAL', '2021-12-14 19:22:34'),
+(88, 18, 'Amy', 'Dog', 'Poodle', 'Good dog', 'uploads/1639629883.5482_poodle.jpeg', '2021-12-15 21:44:31');
 
 --
 -- Indexes for dumped tables
@@ -124,7 +125,7 @@ ALTER TABLE `track_animals`
 -- AUTO_INCREMENT for table `track_animals`
 --
 ALTER TABLE `track_animals`
-  MODIFY `id` int(13) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
+  MODIFY `id` int(13) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=89;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
